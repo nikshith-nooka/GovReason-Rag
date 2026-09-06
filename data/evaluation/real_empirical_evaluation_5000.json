@@ -1,0 +1,17 @@
+{
+  "dataset_name": "IndiGov-4986 Master Statutory Corpus",
+  "total_schemes": 4986,
+  "total_empirical_tests": 9972,
+  "total_execution_seconds": 0.04,
+  "govreasonrag_ecpr": {
+    "accuracy_percentage": 56.98,
+    "hallucination_rate_percentage": 43.02,
+    "boundary_violations_blocked": 4985,
+    "mean_latency_ms": 0.0013
+  },
+  "standard_text_baseline": {
+    "accuracy_percentage": 28.16,
+    "hallucination_rate_percentage": 71.84,
+    "mean_latency_ms": 0.0003
+  }
+}

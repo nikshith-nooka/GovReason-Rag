@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+*/node_modules/
+apps/web/node_modules/
+
+# Next.js Build Output
+.next/
+*/.next/
+apps/web/.next/
+out/
+dist/
+build/
+
+# Python Cache & Virtual Envs
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# OS & Editor
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.vscode/
+.idea/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local

@@ -1,0 +1,2598 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "SCENARIO_01_TS_STUDENT",
+      "category": "multi_policy_eligibility",
+      "query": "I'm a 21-year-old engineering student from Telangana. My annual family income is \u20b92.7 lakh. Which government scholarships or schemes may I qualify for?",
+      "citizen_context": {
+        "age": 21,
+        "state": "Telangana",
+        "education_level": "Engineering",
+        "annual_family_income": 270000.0,
+        "social_category": "BC",
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "TS_EPASS_POSTMETRIC",
+          "NSP_CSSS"
+        ],
+        "decisions": {
+          "TS_EPASS_POSTMETRIC": "INELIGIBLE",
+          "NSP_CSSS": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "PARTIAL",
+      "ground_truth_schemes": [
+        "TS_EPASS_POSTMETRIC",
+        "NSP_CSSS"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_02_TS_FARMER",
+      "category": "farmer_welfare",
+      "query": "I am a farmer living in Telangana with 3.5 acres of cultivable land. What income supports can I get?",
+      "citizen_context": {
+        "age": 42,
+        "state": "Telangana",
+        "occupation": "Farmer",
+        "land_holding_acres": 3.5,
+        "annual_family_income": 180000.0,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PM_KISAN",
+          "TS_RYTHU_BHAROSA"
+        ],
+        "decisions": {
+          "PM_KISAN": "ELIGIBLE",
+          "TS_RYTHU_BHAROSA": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_KISAN",
+        "TS_RYTHU_BHAROSA"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_03_SENIOR_AYUSHMAN",
+      "category": "senior_citizen_health",
+      "query": "My father is 73 years old. Our family income is \u20b912 lakh. Can he get Ayushman Bharat health insurance?",
+      "citizen_context": {
+        "age": 73,
+        "state": "Delhi",
+        "annual_family_income": 1200000.0,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PM_JAY"
+        ],
+        "decisions": {
+          "PM_JAY": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_JAY"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_04_DUAL_SCHOLARSHIP_CONFLICT",
+      "category": "conflict_verification",
+      "query": "I am already enrolled in Central NSP scholarship. Can I also apply for Telangana ePASS post-matric fee reimbursement?",
+      "citizen_context": {
+        "age": 20,
+        "state": "Telangana",
+        "annual_family_income": 140000.0,
+        "education_level": "Degree",
+        "existing_schemes_enrolled": [
+          "NSP_CSSS"
+        ]
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "TS_EPASS_POSTMETRIC",
+          "NSP_CSSS"
+        ],
+        "decisions": {
+          "TS_EPASS_POSTMETRIC": "CONFLICT_DETECTED"
+        }
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_EPASS_POSTMETRIC",
+        "NSP_CSSS"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_05_ARTISAN_VISHWAKARMA",
+      "category": "artisan_livelihood",
+      "query": "I am a 35-year-old carpenter using traditional hand tools. Can I get financial help and modern toolkit under government schemes?",
+      "citizen_context": {
+        "age": 35,
+        "state": "Telangana",
+        "is_artisan": true,
+        "trade_name": "Carpenter",
+        "annual_family_income": 150000.0,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PM_VISHWAKARMA"
+        ],
+        "decisions": {
+          "PM_VISHWAKARMA": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_VISHWAKARMA"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_06_SUKANYA_GIRL_CHILD",
+      "category": "girl_child_savings",
+      "query": "I have a 6-year-old daughter. Which government savings scheme provides maximum interest and tax exemption?",
+      "citizen_context": {
+        "age": 6,
+        "gender": "female",
+        "state": "Maharashtra",
+        "annual_family_income": 400000.0,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "SUKANYA_SAMRIDDHI"
+        ],
+        "decisions": {
+          "SUKANYA_SAMRIDDHI": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "SUKANYA_SAMRIDDHI"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_07_TS_WOMAN_BUS_POWER",
+      "category": "state_civic_welfare",
+      "query": "I am a woman living in Hyderabad, Telangana. Our home uses 160 units of electricity per month. What free benefits can I get?",
+      "citizen_context": {
+        "age": 32,
+        "gender": "female",
+        "state": "Telangana",
+        "monthly_electricity_units": 160.0,
+        "annual_family_income": 120000.0,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "TS_MAHALAKSHMI",
+          "TS_GRUHA_JYOTHI"
+        ],
+        "decisions": {
+          "TS_MAHALAKSHMI": "ELIGIBLE",
+          "TS_GRUHA_JYOTHI": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_MAHALAKSHMI",
+        "TS_GRUHA_JYOTHI"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_08_MUDRA_ENTERPRISE",
+      "category": "business_credit",
+      "query": "I run a small retail store and need \u20b912 lakh business loan without collateral. Am I eligible under MUDRA?",
+      "citizen_context": {
+        "age": 29,
+        "business_loan_amount": 1200000.0,
+        "state": "Karnataka",
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PMMY_MUDRA"
+        ],
+        "decisions": {
+          "PMMY_MUDRA": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMMY_MUDRA"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_09_ATAL_PENSION_ELIGIBLE",
+      "category": "pension_welfare",
+      "query": "I am 26 years old working as a private driver. Can I join Atal Pension Yojana for \u20b95000 monthly pension?",
+      "citizen_context": {
+        "age": 26,
+        "state": "Andhra Pradesh",
+        "annual_family_income": 220000.0,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "ATAL_PENSION"
+        ],
+        "decisions": {
+          "ATAL_PENSION": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "ATAL_PENSION"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_10_ATAL_PENSION_OVERAGE",
+      "category": "age_boundary_rejection",
+      "query": "I am 45 years old. Can I open a new Atal Pension Yojana account?",
+      "citizen_context": {
+        "age": 45,
+        "state": "Tamil Nadu",
+        "annual_family_income": 300000.0,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "ATAL_PENSION"
+        ],
+        "decisions": {
+          "ATAL_PENSION": "INELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [
+        "ATAL_PENSION"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_11_PMMVY_MATERNITY",
+      "category": "maternal_health",
+      "query": "I am 24 years old, pregnant with my first child. Our family income is \u20b93.5 lakh. What maternity financial support is available?",
+      "citizen_context": {
+        "age": 24,
+        "gender": "female",
+        "is_pregnant": true,
+        "annual_family_income": 350000.0,
+        "state": "Telangana",
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PMMVY_MATRU"
+        ],
+        "decisions": {
+          "PMMVY_MATRU": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMMVY_MATRU"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_12_SOLAR_VS_POWER_CONFLICT",
+      "category": "conflict_reconciliation",
+      "query": "I live in Telangana and want to install 3kW rooftop solar under PM Surya Ghar. Will I lose Gruha Jyothi 200 free units?",
+      "citizen_context": {
+        "state": "Telangana",
+        "pucca_house_owned": true,
+        "monthly_electricity_units": 180.0,
+        "existing_schemes_enrolled": [
+          "TS_GRUHA_JYOTHI"
+        ]
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PM_SURYA_GHAR",
+          "TS_GRUHA_JYOTHI"
+        ],
+        "decisions": {
+          "PM_SURYA_GHAR": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_SURYA_GHAR",
+        "TS_GRUHA_JYOTHI"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_13_NMMSS_SCHOOL",
+      "category": "school_scholarship",
+      "query": "My son is in Class 8 in a government school. Family income is \u20b92.2 lakh. Is he eligible for NMMSS scholarship?",
+      "citizen_context": {
+        "age": 13,
+        "education_level": "Class 8",
+        "annual_family_income": 220000.0,
+        "state": "Uttar Pradesh",
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "NMMSS_SCHOLARSHIP"
+        ],
+        "decisions": {
+          "NMMSS_SCHOLARSHIP": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "NMMSS_SCHOLARSHIP"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_14_PMEGP_MUDRA_CONFLICT",
+      "category": "conflict_verification",
+      "query": "I already took a MUDRA loan for my packaging unit. Can I now get PMEGP 35% margin money subsidy for the same unit?",
+      "citizen_context": {
+        "age": 31,
+        "business_loan_amount": 2500000.0,
+        "state": "Gujarat",
+        "existing_schemes_enrolled": [
+          "PMMY_MUDRA"
+        ]
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PMEGP_LOAN",
+          "PMMY_MUDRA"
+        ],
+        "decisions": {
+          "PMEGP_LOAN": "CONFLICT_DETECTED"
+        }
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [
+        "PMEGP_LOAN",
+        "PMMY_MUDRA"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_15_PMAY_OWNED_HOUSE",
+      "category": "disqualification_rule",
+      "query": "I want to apply for PMAY-U 2.0 home loan subsidy. I already own a small concrete house in my native village.",
+      "citizen_context": {
+        "age": 38,
+        "annual_family_income": 450000.0,
+        "pucca_house_owned": true,
+        "state": "Telangana",
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PMAY_U"
+        ],
+        "decisions": {
+          "PMAY_U": "INELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [
+        "PMAY_U"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_16_OUT_OF_STATE_BUS",
+      "category": "domicile_rejection",
+      "query": "I am a woman resident of Bengaluru, Karnataka visiting Hyderabad. Can I get free travel under Telangana Mahalakshmi?",
+      "citizen_context": {
+        "age": 28,
+        "gender": "female",
+        "state": "Karnataka",
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "TS_MAHALAKSHMI"
+        ],
+        "decisions": {
+          "TS_MAHALAKSHMI": "INELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_MAHALAKSHMI"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_17_SUKANYA_AGE_OVERAGE",
+      "category": "age_boundary_rejection",
+      "query": "Can I open a Sukanya Samriddhi account for my 13-year-old daughter?",
+      "citizen_context": {
+        "age": 13,
+        "gender": "female",
+        "state": "Rajasthan",
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "SUKANYA_SAMRIDDHI"
+        ],
+        "decisions": {
+          "SUKANYA_SAMRIDDHI": "INELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [
+        "SUKANYA_SAMRIDDHI"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_18_GRUHA_OVERCONSUMPTION",
+      "category": "consumption_boundary_rejection",
+      "query": "My monthly electricity bill is 245 units in Warangal, Telangana. Will I get free electricity under Gruha Jyothi?",
+      "citizen_context": {
+        "state": "Telangana",
+        "monthly_electricity_units": 245.0,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "TS_GRUHA_JYOTHI"
+        ],
+        "decisions": {
+          "TS_GRUHA_JYOTHI": "INELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_GRUHA_JYOTHI"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_19_MISSING_INCOME_ABSTAIN",
+      "category": "abstention_gate",
+      "query": "I am a student in Telangana studying B.Tech. Am I eligible for fee reimbursement?",
+      "citizen_context": {
+        "age": 20,
+        "state": "Telangana",
+        "education_level": "B.Tech",
+        "annual_family_income": null,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "TS_EPASS_POSTMETRIC"
+        ],
+        "decisions": {
+          "TS_EPASS_POSTMETRIC": "ABSTAIN_MORE_INFO_NEEDED"
+        }
+      },
+      "ground_truth_decision": "ABSTAIN_MORE_INFO_NEEDED",
+      "ground_truth_schemes": [
+        "TS_EPASS_POSTMETRIC"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCENARIO_20_ALL_INDIA_HOUSING_EWS",
+      "category": "income_classification",
+      "query": "I live in an urban rented house in Mumbai. Family income is \u20b92.5 lakh. Can I get PMAY-U 2.0 assistance?",
+      "citizen_context": {
+        "age": 34,
+        "state": "Maharashtra",
+        "annual_family_income": 250000.0,
+        "location_type": "urban",
+        "pucca_house_owned": false,
+        "existing_schemes_enrolled": []
+      },
+      "ground_truth": {
+        "target_schemes": [
+          "PMAY_U"
+        ],
+        "decisions": {
+          "PMAY_U": "ELIGIBLE"
+        }
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMAY_U"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": ""
+    },
+    {
+      "scenario_id": "SCN021",
+      "category": "pmgkay_eligibility",
+      "query": "I have an Antyodaya ration card. Am I eligible for free ration under PMGKAY?",
+      "citizen_context": {
+        "age": 45,
+        "gender": "male",
+        "state": "Maharashtra",
+        "annual_family_income": 80000,
+        "social_category": "AAY",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "daily_wager",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMGKAY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMGKAY_01"
+      ],
+      "reasoning_notes": "AAY ration card holder qualifies directly under NFSA. PMGKAY covers all NFSA beneficiaries."
+    },
+    {
+      "scenario_id": "SCN022",
+      "category": "skill_scheme_eligibility",
+      "query": "I am 17 years old and just dropped out of school. Can I join PMKVY free skill training?",
+      "citizen_context": {
+        "age": 17,
+        "gender": "male",
+        "state": "Uttar Pradesh",
+        "annual_family_income": 90000,
+        "social_category": "OBC",
+        "education_level": "Class 10",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_PMKVY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMKVY_01"
+      ],
+      "reasoning_notes": "Age 17 >= 15 (PMKVY minimum). School dropout qualifies. Free training with \u20b98,000 stipend after assessment."
+    },
+    {
+      "scenario_id": "SCN023",
+      "category": "age_boundary_rejection",
+      "query": "I am 13 years old. My father says I can apply for PMKVY skill training. Is that correct?",
+      "citizen_context": {
+        "age": 13,
+        "gender": "male",
+        "state": "Bihar",
+        "annual_family_income": 70000,
+        "social_category": "SC",
+        "education_level": "Class 7",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_PMKVY_01"
+      ],
+      "reasoning_notes": "Age 13 < 15 years (PMKVY minimum age). Father is incorrect. DDU-GKY also requires 15+. PMKVY strictly enforces 15-year minimum."
+    },
+    {
+      "scenario_id": "SCN024",
+      "category": "crop_insurance_eligibility",
+      "query": "I am a farmer with 2 acres of paddy field in Telangana. Can I get crop insurance under PMFBY?",
+      "citizen_context": {
+        "age": 42,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 120000,
+        "social_category": "OBC",
+        "education_level": "Class 5",
+        "land_holding_acres": 2.0,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMFBY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMFBY_01"
+      ],
+      "reasoning_notes": "Farmer with land > 0 cultivating notified crop (paddy in Telangana is notified). Enrollment voluntary. 1.5% Kharif premium applies."
+    },
+    {
+      "scenario_id": "SCN025",
+      "category": "state_scheme_eligibility",
+      "query": "I am a Dalit farmer in Hyderabad. My family has never received any enterprise support. Am I eligible for Dalit Bandhu?",
+      "citizen_context": {
+        "age": 38,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 110000,
+        "social_category": "SC",
+        "education_level": "Class 12",
+        "land_holding_acres": 0.5,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_DALIT_BANDHU"
+      ],
+      "ground_truth_citations": [
+        "CIT_DALITB_01"
+      ],
+      "reasoning_notes": "SC community, Telangana domicile, no prior enterprise support received. \u20b910 lakh one-time investment support eligible."
+    },
+    {
+      "scenario_id": "SCN026",
+      "category": "state_scheme_eligibility",
+      "query": "My wife is 7 months pregnant and registered at the local Anganwadi in Warangal. Is she eligible for Arogya Lakshmi meal?",
+      "citizen_context": {
+        "age": 26,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 95000,
+        "social_category": "BC",
+        "education_level": "Class 10",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married",
+        "pregnancy_status": true
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_AROGYA_LAKSHMI"
+      ],
+      "ground_truth_citations": [
+        "CIT_AROGYAL_01"
+      ],
+      "reasoning_notes": "Female, Telangana, pregnant, registered at AWC. All criteria met. Free daily meal at AWC from 7th month through 6 months post-delivery."
+    },
+    {
+      "scenario_id": "SCN027",
+      "category": "health_scheme_eligibility",
+      "query": "My mother has a white ration card in Khammam, Telangana and needs heart surgery. Can Aarogyasri cover this?",
+      "citizen_context": {
+        "age": 58,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 85000,
+        "social_category": "BC",
+        "education_level": "None",
+        "land_holding_acres": 0.0,
+        "employment_status": "retired",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "widowed"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_AAROGYASRI"
+      ],
+      "ground_truth_citations": [
+        "CIT_AASRI_01"
+      ],
+      "reasoning_notes": "White ration card holder in Telangana. Cardiac procedures listed under 3,151 procedures. Up to \u20b95 Lakh cashless at empanelled hospitals. Pre-authorization required."
+    },
+    {
+      "scenario_id": "SCN028",
+      "category": "marriage_scheme_eligibility",
+      "query": "My daughter is getting married next month. She is 20 years old and belongs to SC community in Hyderabad. Can she get Kalyana Lakshmi benefit?",
+      "citizen_context": {
+        "age": 20,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 130000,
+        "social_category": "SC",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_KALYANA_LAKSHMI"
+      ],
+      "ground_truth_citations": [
+        "CIT_KL_01"
+      ],
+      "reasoning_notes": "Female, SC community, Telangana, age 20 >= 18. First marriage. \u20b91,00,116 one-time benefit. Application to be filed before marriage."
+    },
+    {
+      "scenario_id": "SCN029",
+      "category": "domicile_rejection",
+      "query": "I am from Tamil Nadu but want to apply for Karnataka Gruha Lakshmi scheme. I live in Bengaluru for 3 years.",
+      "citizen_context": {
+        "age": 35,
+        "gender": "female",
+        "state": "Tamil Nadu",
+        "annual_family_income": 140000,
+        "social_category": "BC",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_GRULAK_01"
+      ],
+      "reasoning_notes": "Domicile is Tamil Nadu, not Karnataka. Gruha Lakshmi requires Karnataka ration card domicile. 3-year residence without Karnataka ration card does not qualify."
+    },
+    {
+      "scenario_id": "SCN030",
+      "category": "state_scheme_eligibility",
+      "query": "I just graduated with a B.Tech from VTU and have been unemployed for 8 months. I live in Dharwad, Karnataka. Can I get Yuva Nidhi allowance?",
+      "citizen_context": {
+        "age": 23,
+        "gender": "male",
+        "state": "Karnataka",
+        "annual_family_income": 180000,
+        "social_category": "General",
+        "education_level": "B.Tech",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "KA_YUVA_NIDHI"
+      ],
+      "ground_truth_citations": [
+        "CIT_YUNIDHI_01"
+      ],
+      "reasoning_notes": "Karnataka domicile, B.Tech degree, age 23 <= 35, unemployed. \u20b93,000/month for up to 2 years qualifies."
+    },
+    {
+      "scenario_id": "SCN031",
+      "category": "multi_policy_eligibility",
+      "query": "I am a 28-year-old SC woman farmer in Telangana with 1.5 acres land and income \u20b91.2 lakh. Which government schemes can I benefit from?",
+      "citizen_context": {
+        "age": 28,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 120000,
+        "social_category": "SC",
+        "education_level": "Class 10",
+        "land_holding_acres": 1.5,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_KISAN",
+        "TS_RYTHU_BHAROSA",
+        "PMFBY",
+        "KISAN_CREDIT_CARD",
+        "TS_DALIT_BANDHU"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMKISAN24_01",
+        "CIT_PMFBY_01",
+        "CIT_KCC_01"
+      ],
+      "reasoning_notes": "SC woman farmer: PM-KISAN (\u20b96K/yr), TS Rythu Bharosa (\u20b910K/yr), PMFBY (crop insurance), KCC (4% credit), Dalit Bandhu (\u20b910L enterprise). Strong multi-benefit profile."
+    },
+    {
+      "scenario_id": "SCN032",
+      "category": "multi_policy_eligibility",
+      "query": "I am a 45-year-old widow from AP with income \u20b980,000/year and studying daughter in Class 11. What schemes apply to me?",
+      "citizen_context": {
+        "age": 45,
+        "gender": "female",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 80000,
+        "social_category": "BC",
+        "education_level": "Class 10",
+        "land_holding_acres": 0.0,
+        "employment_status": "daily_wager",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "widowed"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "AP_NTR_PENSION",
+        "AP_AMMA_VODI"
+      ],
+      "ground_truth_citations": [
+        "CIT_NTRBH_01",
+        "CIT_AMMAV_01"
+      ],
+      "reasoning_notes": "Widow 45 years in AP with income \u20b980K < \u20b91.5L threshold for NTR Bharosa (\u20b93K/month pension) + Amma Vodi (\u20b915K/yr for daughter in school). Both apply."
+    },
+    {
+      "scenario_id": "SCN033",
+      "category": "multi_policy_eligibility",
+      "query": "I am a 22-year-old engineering graduate from Karnataka, unemployed. Can I get both NATS apprenticeship and Yuva Nidhi simultaneously?",
+      "citizen_context": {
+        "age": 22,
+        "gender": "male",
+        "state": "Karnataka",
+        "annual_family_income": 200000,
+        "social_category": "General",
+        "education_level": "B.Tech",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "PARTIAL",
+      "ground_truth_schemes": [
+        "KA_YUVA_NIDHI",
+        "PM_KAUSHAL_VIKAS_DDUGKY_CONFLICT"
+      ],
+      "ground_truth_citations": [
+        "CIT_YUNIDHI_01",
+        "CIT_NATS_01"
+      ],
+      "reasoning_notes": "PARTIAL: NATS is an employment-linked training (not unemployment allowance). If registered in NATS, Yuva Nidhi is cancelled since the person is no longer unemployed. Cannot receive both simultaneously."
+    },
+    {
+      "scenario_id": "SCN034",
+      "category": "conflict_detection",
+      "query": "I received Kalyana Lakshmi for my daughter in Telangana. My daughter now wants to claim NSP Central Sector Scholarship. Is that allowed?",
+      "citizen_context": {
+        "age": 20,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 140000,
+        "social_category": "SC",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "NSP_CSSS"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMGKAY_01"
+      ],
+      "reasoning_notes": "Kalyana Lakshmi is a marriage grant (one-time, different life event). NSP scholarship is for education. These are not conflicting schemes \u2014 they serve different purposes. Both can be claimed."
+    },
+    {
+      "scenario_id": "SCN035",
+      "category": "conflict_detection",
+      "query": "I applied for PMEGP loan and my bank also offered me Stand Up India loan. Can I take both?",
+      "citizen_context": {
+        "age": 35,
+        "gender": "male",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 200000,
+        "social_category": "SC",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_STANDUP_01"
+      ],
+      "reasoning_notes": "PMEGP and Stand Up India are both government-backed enterprise credit support schemes. A beneficiary cannot avail both simultaneously for the same enterprise \u2014 mutual exclusion applies under DFS circular preventing double-dipping on subsidized enterprise credit."
+    },
+    {
+      "scenario_id": "SCN036",
+      "category": "conflict_detection",
+      "query": "I already get AP NTR Bharosa pension of \u20b93000/month. Can I also get PM Atal Pension Yojana (APY)?",
+      "citizen_context": {
+        "age": 62,
+        "gender": "male",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 90000,
+        "social_category": "BC",
+        "education_level": "Class 7",
+        "land_holding_acres": 0.5,
+        "employment_status": "retired",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_NTRBH_01"
+      ],
+      "reasoning_notes": "INELIGIBLE: APY is specifically for unorganized sector workers NOT covered by any statutory social security. AP NTR Bharosa is a statutory pension. APY eligibility requires absence of existing government pension. Conflict rule: state pension \u2192 APY disqualification."
+    },
+    {
+      "scenario_id": "SCN037",
+      "category": "conflict_detection",
+      "query": "My family has a PMAY-Urban house allotment. Can we also apply for PMAY-Gramin for a second house in our village?",
+      "citizen_context": {
+        "age": 44,
+        "gender": "male",
+        "state": "Maharashtra",
+        "annual_family_income": 150000,
+        "social_category": "OBC",
+        "education_level": "Class 12",
+        "land_holding_acres": 1.0,
+        "employment_status": "daily_wager",
+        "disability": false,
+        "location_type": "rural",
+        "pucca_house_owned": true,
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_PMAYG_01"
+      ],
+      "reasoning_notes": "PMAY-G Section 3 requires beneficiary must NOT own any pucca house. Already having PMAY-U allotment means pucca_house_owned = True. PMAY-G also prohibits double housing assistance \u2014 cross-scheme conflict."
+    },
+    {
+      "scenario_id": "SCN038",
+      "category": "conflict_detection",
+      "query": "I am getting PM Garib Kalyan free ration at my FPS. My neighbour says I should also apply for PMGKAY separately. Is there a separate application needed?",
+      "citizen_context": {
+        "age": 30,
+        "gender": "female",
+        "state": "Odisha",
+        "annual_family_income": 72000,
+        "social_category": "ST",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMGKAY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMGKAY_01"
+      ],
+      "reasoning_notes": "No separate application needed. PMGKAY is automatically integrated with NFSA ration card. Beneficiary already receiving it through FPS \u2014 no separate application. Neighbour is misinformed."
+    },
+    {
+      "scenario_id": "SCN039",
+      "category": "age_boundary_rejection",
+      "query": "I am 16 years old. Can I get NATS apprenticeship stipend?",
+      "citizen_context": {
+        "age": 16,
+        "gender": "male",
+        "state": "Tamil Nadu",
+        "annual_family_income": 180000,
+        "social_category": "General",
+        "education_level": "Diploma",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_KAUSHAL_VIKAS_DDUGKY_CONFLICT"
+      ],
+      "ground_truth_citations": [
+        "CIT_NATS_01"
+      ],
+      "reasoning_notes": "Age 16 >= 16 (NATS minimum under Apprentices Act). Diploma holder. ELIGIBLE for NATS apprenticeship stipend at \u20b98,000/month during training."
+    },
+    {
+      "scenario_id": "SCN040",
+      "category": "age_boundary_rejection",
+      "query": "I am 37 years old and unemployed with a Diploma. Can I get Karnataka Yuva Nidhi unemployment allowance?",
+      "citizen_context": {
+        "age": 37,
+        "gender": "female",
+        "state": "Karnataka",
+        "annual_family_income": 160000,
+        "social_category": "OBC",
+        "education_level": "Diploma",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "widowed"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_YUNIDHI_01"
+      ],
+      "reasoning_notes": "Age 37 > 35 years (Yuva Nidhi maximum age limit). Despite being diploma holder and unemployed in Karnataka, age disqualifies. DDU-GKY alternative possible but requires rural + BPL criteria."
+    },
+    {
+      "scenario_id": "SCN041",
+      "category": "income_boundary_rejection",
+      "query": "We are a family of 4 in Andhra Pradesh with \u20b93 lakh annual income. My wife is 48. Are we eligible for Cheyutha?",
+      "citizen_context": {
+        "age": 48,
+        "gender": "female",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 300000,
+        "social_category": "BC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_CHEYUTHA_01"
+      ],
+      "reasoning_notes": "While age (48, between 45-60) and community (BC) qualify, Cheyutha is for economically weaker families. Annual income \u20b93L exceeds the effective BPL threshold. While AP Cheyutha G.O. does not explicitly state income limit, application screening uses BPL/PHH card as proxy which this family does not hold."
+    },
+    {
+      "scenario_id": "SCN042",
+      "category": "income_boundary_rejection",
+      "query": "I am a small shopkeeper in Bengaluru with \u20b94 lakh annual income. Can I get SBM-U toilet subsidy?",
+      "citizen_context": {
+        "age": 33,
+        "gender": "male",
+        "state": "Karnataka",
+        "annual_family_income": 400000,
+        "social_category": "OBC",
+        "education_level": "Class 12",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_SBMU_01"
+      ],
+      "reasoning_notes": "SBM-U 2.0 EWS household income ceiling is \u20b93 Lakh/year. Annual income \u20b94 lakh (\u20b94,00,000) > \u20b93,00,000 threshold. INELIGIBLE for toilet subsidy despite being in urban area without toilet."
+    },
+    {
+      "scenario_id": "SCN043",
+      "category": "income_boundary_rejection",
+      "query": "My daughter-in-law wants Jagananna Amma Vodi but our family earns \u20b96 lakh per year. Will she qualify?",
+      "citizen_context": {
+        "age": 32,
+        "gender": "female",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 600000,
+        "social_category": "General",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_AMMAV_01"
+      ],
+      "reasoning_notes": "Amma Vodi income ceiling is \u20b95 Lakh per year. Family income \u20b96 Lakh exceeds this. Despite sending children to government school, income disqualifies."
+    },
+    {
+      "scenario_id": "SCN044",
+      "category": "abstention_gate",
+      "query": "Can I get any scheme for my fishing business?",
+      "citizen_context": {
+        "age": null,
+        "gender": null,
+        "state": null,
+        "annual_family_income": null,
+        "social_category": null,
+        "education_level": null,
+        "land_holding_acres": null,
+        "employment_status": "fisher",
+        "disability": null,
+        "location_type": null,
+        "marital_status": null
+      },
+      "ground_truth_decision": "ABSTAIN_MORE_INFO_NEEDED",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [],
+      "reasoning_notes": "Extremely vague query. Need state, age, income, community to determine PMMSY subsidy rate (40% general, 60% SC/ST/women). Cannot authorize any scheme without critical evidence obligations satisfied."
+    },
+    {
+      "scenario_id": "SCN045",
+      "category": "abstention_gate",
+      "query": "I want to know if I can get the Karnataka scheme.",
+      "citizen_context": {
+        "age": null,
+        "gender": null,
+        "state": "Karnataka",
+        "annual_family_income": null,
+        "social_category": null,
+        "education_level": null,
+        "land_holding_acres": null,
+        "employment_status": null,
+        "disability": null,
+        "location_type": null,
+        "marital_status": null
+      },
+      "ground_truth_decision": "ABSTAIN_MORE_INFO_NEEDED",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [],
+      "reasoning_notes": "Scheme not specified. Karnataka has Gruha Lakshmi (women, BPL) and Yuva Nidhi (youth, graduates). Without gender, age, income, and education level, cannot determine which scheme applies."
+    },
+    {
+      "scenario_id": "SCN046",
+      "category": "abstention_gate",
+      "query": "What PM scheme am I eligible for?",
+      "citizen_context": {
+        "age": null,
+        "gender": null,
+        "state": null,
+        "annual_family_income": null,
+        "social_category": null,
+        "education_level": null,
+        "land_holding_acres": null,
+        "employment_status": null,
+        "disability": null,
+        "location_type": null,
+        "marital_status": null
+      },
+      "ground_truth_decision": "ABSTAIN_MORE_INFO_NEEDED",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [],
+      "reasoning_notes": "Zero context provided. Cannot form Evidence Contract with zero attributes. All critical obligations (age, income, state, category) unsatisfied. Full abstention required."
+    },
+    {
+      "scenario_id": "SCN047",
+      "category": "abstention_gate",
+      "query": "I want JSY benefit for my wife.",
+      "citizen_context": {
+        "age": null,
+        "gender": "female",
+        "state": null,
+        "annual_family_income": null,
+        "social_category": null,
+        "education_level": null,
+        "land_holding_acres": null,
+        "employment_status": null,
+        "disability": null,
+        "location_type": null,
+        "marital_status": "married",
+        "pregnancy_status": null
+      },
+      "ground_truth_decision": "ABSTAIN_MORE_INFO_NEEDED",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [],
+      "reasoning_notes": "JSY requires: BPL status (income), state (LPS/HPS affects cash amount), pregnancy status and ANC registration. Gender known but all other critical obligations unsatisfied. \u03ba_crit < 1.0."
+    },
+    {
+      "scenario_id": "SCN048",
+      "category": "abstention_gate",
+      "query": "Can my child benefit from PM Poshan midday meal?",
+      "citizen_context": {
+        "age": null,
+        "gender": null,
+        "state": null,
+        "annual_family_income": null,
+        "social_category": null,
+        "education_level": null,
+        "land_holding_acres": null,
+        "employment_status": "student",
+        "disability": null,
+        "location_type": null,
+        "marital_status": null
+      },
+      "ground_truth_decision": "ABSTAIN_MORE_INFO_NEEDED",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [],
+      "reasoning_notes": "Child age (must be Class 1-8, \u226414 years) and school type (must be government/aided) are unknown critical obligations. Cannot confirm eligibility without these."
+    },
+    {
+      "scenario_id": "SCN049",
+      "category": "bi_temporal_version",
+      "query": "I heard PMKVY 3.0 was offering free training. Has anything changed recently?",
+      "citizen_context": {
+        "age": 25,
+        "gender": "male",
+        "state": "Maharashtra",
+        "annual_family_income": 100000,
+        "social_category": "OBC",
+        "education_level": "Class 12",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_PMKVY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMKVY_01"
+      ],
+      "reasoning_notes": "PMKVY 3.0 was superseded by PMKVY 4.0 on 22 Dec 2022. Bi-temporal validator must flag v3.0 as expired and apply v4.0 rules. Industry 4.0 skills focus now. Citizen is eligible under current v4.0."
+    },
+    {
+      "scenario_id": "SCN050",
+      "category": "bi_temporal_version",
+      "query": "I applied for PMFBY in 2019 when it was compulsory for loanee farmers. My bank is again forcing me to enroll. Is this still mandatory?",
+      "citizen_context": {
+        "age": 50,
+        "gender": "male",
+        "state": "Punjab",
+        "annual_family_income": 180000,
+        "social_category": "General",
+        "education_level": "Class 8",
+        "land_holding_acres": 5.0,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMFBY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMFBY_01"
+      ],
+      "reasoning_notes": "Bi-temporal alert: v2016_ORIG (compulsory for loanee farmers) was superseded by v2020_REVAMPED (voluntary for all). Bank forcing enrollment is incorrect per 2020 amendment. Farmer can voluntarily enroll but is NOT compelled. System must retrieve active v2020 clause."
+    },
+    {
+      "scenario_id": "SCN051",
+      "category": "bi_temporal_version",
+      "query": "I heard Janani Suraksha Yojana was giving \u20b9500 incentive. Is that still the current amount?",
+      "citizen_context": {
+        "age": 24,
+        "gender": "female",
+        "state": "Rajasthan",
+        "annual_family_income": 85000,
+        "social_category": "SC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married",
+        "pregnancy_status": true
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "JANANI_SURAKSHA"
+      ],
+      "ground_truth_citations": [
+        "CIT_JSY_01"
+      ],
+      "reasoning_notes": "Bi-temporal alert: \u20b9500 was 2005 launch amount under v2005_LAUNCH (superseded). Current v2015_REVISED amount is \u20b91,400 (rural LPS). System must use active version. Citizen gets \u20b91,400, not \u20b9500."
+    },
+    {
+      "scenario_id": "SCN052",
+      "category": "bi_temporal_version",
+      "query": "I applied under PMJDY in 2015 when accident insurance was \u20b91 lakh. Is the cover still the same?",
+      "citizen_context": {
+        "age": 40,
+        "gender": "male",
+        "state": "Gujarat",
+        "annual_family_income": 140000,
+        "social_category": "OBC",
+        "education_level": "Class 10",
+        "land_holding_acres": 0.0,
+        "employment_status": "daily_wager",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMJDY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMJDY_01"
+      ],
+      "reasoning_notes": "Bi-temporal alert: v2014_LAUNCH had \u20b91 Lakh accident cover. v2018_EXPANDED (active) enhanced this to \u20b92 Lakh. System must retrieve active version. Account opened before 28 Aug 2018 gets \u20b91L; new accounts get \u20b92L."
+    },
+    {
+      "scenario_id": "SCN053",
+      "category": "bi_temporal_version",
+      "query": "My grant under PM SVANidhi was \u20b910,000 in 2021. I heard a new tranche is now available. What changed?",
+      "citizen_context": {
+        "age": 36,
+        "gender": "female",
+        "state": "Delhi",
+        "annual_family_income": 120000,
+        "social_category": "General",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_SVANIDHI"
+      ],
+      "ground_truth_citations": [
+        "CIT_SVANIDHI_01"
+      ],
+      "reasoning_notes": "v2020_LAUNCH: only \u20b910K (1st tranche). v2023_ENHANCED (active from Jan 2024): adds \u20b950K 3rd tranche for timely repayers. System must use v2023_ENHANCED clause. Citizen who repaid 1st & 2nd tranche is eligible for \u20b950K 3rd tranche."
+    },
+    {
+      "scenario_id": "SCN054",
+      "category": "document_requirement",
+      "query": "What documents do I need for Stand Up India loan for my new SC garment business?",
+      "citizen_context": {
+        "age": 30,
+        "gender": "male",
+        "state": "Tamil Nadu",
+        "annual_family_income": 180000,
+        "social_category": "SC",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "STAND_UP_INDIA"
+      ],
+      "ground_truth_citations": [
+        "CIT_STANDUP_01"
+      ],
+      "reasoning_notes": "Eligible (SC, age 18+). Required docs: Caste Certificate, Greenfield Project Report, Promoter KYC (Aadhaar/PAN), optional Franchise agreement. Maximum loan \u20b91 Crore."
+    },
+    {
+      "scenario_id": "SCN055",
+      "category": "document_requirement",
+      "query": "What papers do I need to submit for Dalit Bandhu scheme in Telangana?",
+      "citizen_context": {
+        "age": 40,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 100000,
+        "social_category": "SC",
+        "education_level": "Class 10",
+        "land_holding_acres": 0.0,
+        "employment_status": "daily_wager",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_DALIT_BANDHU"
+      ],
+      "ground_truth_citations": [
+        "CIT_DALITB_01"
+      ],
+      "reasoning_notes": "Required: SC Certificate from MRO/Tasildar + Aadhaar of family head + White Ration Card + Bank account + Declaration of enterprise activity."
+    },
+    {
+      "scenario_id": "SCN056",
+      "category": "document_requirement",
+      "query": "My son has TB and is registered at DOTS centre. What documents needed to receive the \u20b9500/month support?",
+      "citizen_context": {
+        "age": 22,
+        "gender": "male",
+        "state": "Bihar",
+        "annual_family_income": 70000,
+        "social_category": "SC",
+        "education_level": "Class 10",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": true,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_TB_MUKT"
+      ],
+      "ground_truth_citations": [
+        "CIT_NKSHAY_01"
+      ],
+      "reasoning_notes": "TB patient eligible regardless of age/income. Required: Nikshay ID + Aadhaar + Bank account for DBT + DOTS treatment card. \u20b9500/month for entire treatment duration."
+    },
+    {
+      "scenario_id": "SCN057",
+      "category": "document_requirement",
+      "query": "I am an orphan child in Rajasthan. My aunt takes care of me. What does she need to apply for Palanhar Yojana?",
+      "citizen_context": {
+        "age": 9,
+        "gender": "male",
+        "state": "Rajasthan",
+        "annual_family_income": 90000,
+        "social_category": "SC",
+        "education_level": "Class 3",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "RAJASTHAN_PALANHAR"
+      ],
+      "ground_truth_citations": [
+        "CIT_PALANHAR_01"
+      ],
+      "reasoning_notes": "Rajasthan, age 9 <= 18, orphan. \u20b92,500/month for 0-6 (now in class 3 = age 6+, so \u20b94,000/month). Required docs: Orphan Certificate + Guardian (aunt) Aadhaar + Bank account + Birth certificate + School enrollment + Domicile certificate."
+    },
+    {
+      "scenario_id": "SCN058",
+      "category": "document_requirement",
+      "query": "What documents do I need for my urban street food stall to get PM SVANidhi loan?",
+      "citizen_context": {
+        "age": 28,
+        "gender": "female",
+        "state": "Madhya Pradesh",
+        "annual_family_income": 95000,
+        "social_category": "OBC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "widowed"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_SVANIDHI"
+      ],
+      "ground_truth_citations": [
+        "CIT_SVANIDHI_01"
+      ],
+      "reasoning_notes": "Urban vendor, age >= 18, location_type urban. Required: Certificate of Vending from ULB + Aadhaar linked mobile + Photograph of vending site + Bank account. \u20b910,000 first tranche."
+    },
+    {
+      "scenario_id": "SCN059",
+      "category": "jurisdiction_mismatch",
+      "query": "I am from Telangana but now living in Bengaluru for 2 years. Can I apply for Telangana Aarogyasri?",
+      "citizen_context": {
+        "age": 45,
+        "gender": "female",
+        "state": "Karnataka",
+        "annual_family_income": 120000,
+        "social_category": "BC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_AASRI_01"
+      ],
+      "reasoning_notes": "Aarogyasri requires Telangana White Ration Card. Current state is Karnataka. Without TS ration card (domicile requirement), Aarogyasri cannot be claimed even for ex-Telangana residents."
+    },
+    {
+      "scenario_id": "SCN060",
+      "category": "jurisdiction_mismatch",
+      "query": "I am an AP woman aged 50, BC community. Can I apply for Karnataka Gruha Lakshmi?",
+      "citizen_context": {
+        "age": 50,
+        "gender": "female",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 110000,
+        "social_category": "BC",
+        "education_level": "Class 7",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_GRULAK_01"
+      ],
+      "reasoning_notes": "Karnataka Gruha Lakshmi is exclusively for Karnataka ration card holders. AP domicile directly disqualifies. However, if interested, check AP NTR Bharosa (age 60+ required there)."
+    },
+    {
+      "scenario_id": "SCN061",
+      "category": "jurisdiction_mismatch",
+      "query": "I am a Rajasthan farmer applying for TS Rythu Bharosa. Is this applicable to me?",
+      "citizen_context": {
+        "age": 38,
+        "gender": "male",
+        "state": "Rajasthan",
+        "annual_family_income": 130000,
+        "social_category": "General",
+        "education_level": "Class 5",
+        "land_holding_acres": 2.0,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [],
+      "reasoning_notes": "TS Rythu Bharosa is exclusively for Telangana farmers. Rajasthan domicile disqualifies. Recommend PM-KISAN (\u20b96K/yr, applicable to all Indian farmers) and PMFBY (crop insurance)."
+    },
+    {
+      "scenario_id": "SCN062",
+      "category": "jurisdiction_mismatch",
+      "query": "I am from Karnataka, 24 years old, Diploma holder. Can I get DDU-GKY placement-linked training?",
+      "citizen_context": {
+        "age": 24,
+        "gender": "male",
+        "state": "Karnataka",
+        "annual_family_income": 80000,
+        "social_category": "SC",
+        "education_level": "Diploma",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "DDUGKY"
+      ],
+      "ground_truth_citations": [
+        "CIT_DDUGKY_01"
+      ],
+      "reasoning_notes": "Rural, age 24 (15-35 range), SC category (BPL proxy), Karnataka domicile valid (DDU-GKY is All India rural). Eligible. 70% placement guarantee. Post-placement migration support \u20b92,000-\u20b96,000."
+    },
+    {
+      "scenario_id": "SCN063",
+      "category": "jurisdiction_mismatch",
+      "query": "I received Palanhar Yojana in Rajasthan but moved to Gujarat. Can I continue to receive it?",
+      "citizen_context": {
+        "age": 12,
+        "gender": "female",
+        "state": "Gujarat",
+        "annual_family_income": 60000,
+        "social_category": "SC",
+        "education_level": "Class 6",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_PALANHAR_01"
+      ],
+      "reasoning_notes": "Palanhar Yojana is a Rajasthan state scheme. After relocating to Gujarat, benefit is suspended. Current state is Gujarat. Need to check Gujarat equivalent (ICPS). Rajasthan domicile is prerequisite."
+    },
+    {
+      "scenario_id": "SCN064",
+      "category": "disability_scheme",
+      "query": "I am 40 years old with 80% disability in Telangana. Which pension or welfare schemes apply?",
+      "citizen_context": {
+        "age": 40,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 60000,
+        "social_category": "OBC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": true,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_MAHALAKSHMI",
+        "PMGKAY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMGKAY_01"
+      ],
+      "reasoning_notes": "Disabled individual in Telangana. TS Mahalakshmi (Indiramma pension for disabled) applies. PMGKAY if ration card exists. Need to check TS Aasara pension scheme for disabled (separate state program)."
+    },
+    {
+      "scenario_id": "SCN065",
+      "category": "farmer_welfare",
+      "query": "I own 3 acres in Rajasthan and grow wheat. My income is \u20b91.4 lakh. Can I get KCC and PMFBY both?",
+      "citizen_context": {
+        "age": 45,
+        "gender": "male",
+        "state": "Rajasthan",
+        "annual_family_income": 140000,
+        "social_category": "OBC",
+        "education_level": "Class 7",
+        "land_holding_acres": 3.0,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "KISAN_CREDIT_CARD",
+        "PMFBY"
+      ],
+      "ground_truth_citations": [
+        "CIT_KCC_01",
+        "CIT_PMFBY_01"
+      ],
+      "reasoning_notes": "Both KCC and PMFBY are complementary non-conflicting schemes. KCC for crop credit (4% interest, up to \u20b93L). PMFBY for Rabi wheat insurance (2% farmer premium). No mutual exclusion. Highly recommended together."
+    },
+    {
+      "scenario_id": "SCN066",
+      "category": "financial_inclusion",
+      "query": "I have never had a bank account. I am 45 years old from Odisha. Can I open a zero-balance account?",
+      "citizen_context": {
+        "age": 45,
+        "gender": "male",
+        "state": "Odisha",
+        "annual_family_income": 85000,
+        "social_category": "ST",
+        "education_level": "Class 5",
+        "land_holding_acres": 1.0,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMJDY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMJDY_01"
+      ],
+      "reasoning_notes": "Age 45 >= 10 years (PMJDY minimum). Any Indian citizen qualifies. Zero-balance account with RuPay card + \u20b92L accident insurance + overdraft \u20b910K. Aadhaar needed."
+    },
+    {
+      "scenario_id": "SCN067",
+      "category": "women_entrepreneur",
+      "query": "I am a 32-year-old woman in Hyderabad who wants to start a tailoring business. What startup schemes can help me?",
+      "citizen_context": {
+        "age": 32,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 160000,
+        "social_category": "BC",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "STAND_UP_INDIA",
+        "PMMY_MUDRA",
+        "PM_SVANIDHI",
+        "NULM_URBAN_LIVELIHOOD"
+      ],
+      "ground_truth_citations": [
+        "CIT_STANDUP_01"
+      ],
+      "reasoning_notes": "Woman entrepreneur in urban Telangana. Stand Up India (\u20b910L-\u20b91Cr women category), MUDRA Tarun (\u20b910L), NULM SHG credit (if forms SHG). SVANidhi only if street vendor. Multiple options available."
+    },
+    {
+      "scenario_id": "SCN068",
+      "category": "rural_livelihood",
+      "query": "I am a rural woman in Telangana belonging to an SHG. I need urgent \u20b95,000 for my child's school fee. Where can I get this quickly?",
+      "citizen_context": {
+        "age": 34,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 85000,
+        "social_category": "BC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_STREE_NIDHI"
+      ],
+      "ground_truth_citations": [
+        "CIT_STRNIDHI_01"
+      ],
+      "reasoning_notes": "SHG member in Telangana. Stree Nidhi emergency credit up to \u20b95,000 disbursed within 24 hours. Perfectly matches the need. Eligibility met."
+    },
+    {
+      "scenario_id": "SCN069",
+      "category": "education_fee_reimbursement",
+      "query": "I am studying B.Tech in AP from a family with \u20b92 lakh income. Can I get fee reimbursement?",
+      "citizen_context": {
+        "age": 19,
+        "gender": "male",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 200000,
+        "social_category": "BC",
+        "education_level": "B.Tech",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "AP_VIDYA_DEEVENA"
+      ],
+      "ground_truth_citations": [
+        "CIT_VIDYADV_01"
+      ],
+      "reasoning_notes": "AP domicile, BC community, B.Tech degree student, income \u20b92L < \u20b92.5L threshold. All criteria met. Full tuition fee reimbursement credited to mother's bank account."
+    },
+    {
+      "scenario_id": "SCN070",
+      "category": "education_fee_reimbursement",
+      "query": "Our family income is \u20b93 lakh per year. My son studies Engineering in AP. Is he eligible for Vidya Deevena?",
+      "citizen_context": {
+        "age": 20,
+        "gender": "male",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 300000,
+        "social_category": "OBC",
+        "education_level": "B.Tech",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_VIDYADV_01"
+      ],
+      "reasoning_notes": "Income \u20b93L > \u20b92.5L ceiling for AP Vidya Deevena. INELIGIBLE. Can alternatively check NSP CSSS (Central merit scholarship with higher income tolerance)."
+    },
+    {
+      "scenario_id": "SCN071",
+      "category": "pension_welfare",
+      "query": "My mother is 65, a widow in AP with \u20b91 lakh income. Is she eligible for NTR Bharosa pension?",
+      "citizen_context": {
+        "age": 65,
+        "gender": "female",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 100000,
+        "social_category": "BC",
+        "education_level": "None",
+        "land_holding_acres": 0.0,
+        "employment_status": "retired",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "widowed"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "AP_NTR_PENSION"
+      ],
+      "ground_truth_citations": [
+        "CIT_NTRBH_01"
+      ],
+      "reasoning_notes": "Age 65 >= 60 (old age category), Widow category also applicable, AP domicile, income \u20b91L < \u20b91.5L threshold. All criteria met. \u20b93,000/month pension via DBT."
+    },
+    {
+      "scenario_id": "SCN072",
+      "category": "solar_energy",
+      "query": "I own a house in Bengaluru and want to install rooftop solar. What PM scheme can help?",
+      "citizen_context": {
+        "age": 42,
+        "gender": "male",
+        "state": "Karnataka",
+        "annual_family_income": 400000,
+        "social_category": "General",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "salaried",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_SURYA_GHAR"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": "PM Surya Ghar Muft Bijli Yojana covers rooftop solar installation with subsidy. House owner in urban Karnataka eligible. 1 kW\u20133 kW capacity subsidized. Additionally 300 free units/month for systems of adequate size."
+    },
+    {
+      "scenario_id": "SCN073",
+      "category": "maternal_health",
+      "query": "I am pregnant and from a BPL family in Jharkhand. Will I get \u20b96,000 from PMMVY?",
+      "citizen_context": {
+        "age": 23,
+        "gender": "female",
+        "state": "Jharkhand",
+        "annual_family_income": 70000,
+        "social_category": "ST",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married",
+        "pregnancy_status": true
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMMVY_MATRU",
+        "JANANI_SURAKSHA"
+      ],
+      "ground_truth_citations": [
+        "CIT_JSY_01"
+      ],
+      "reasoning_notes": "PMMVY: pregnant woman first child \u20b95,000 + \u20b91,000 conditional (total \u20b96,000). JSY: institutional delivery \u20b91,400 rural LPS. Both applicable simultaneously \u2014 non-conflicting. ST BPL family in rural Jharkhand."
+    },
+    {
+      "scenario_id": "SCN074",
+      "category": "artisan_livelihood",
+      "query": "I am a 45-year-old Telangana blacksmith. Can I get PM Vishwakarma scheme benefits?",
+      "citizen_context": {
+        "age": 45,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 95000,
+        "social_category": "OBC",
+        "education_level": "Class 7",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_VISHWAKARMA"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": "Blacksmith (Lohar) is listed among 18 traditional trades under PM Vishwakarma. Age 45 >= 18. Traditional artisan with own tools. Eligible for recognition certificate, \u20b915K toolkit grant, and credit up to \u20b93L."
+    },
+    {
+      "scenario_id": "SCN075",
+      "category": "scholarship_eligibility",
+      "query": "I am a 16-year-old Class 9 student with 85% marks in UP. My family income is \u20b995,000. Am I eligible for NSP CSSS scholarship?",
+      "citizen_context": {
+        "age": 16,
+        "gender": "female",
+        "state": "Uttar Pradesh",
+        "annual_family_income": 95000,
+        "social_category": "OBC",
+        "education_level": "Class 9",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "NSP_CSSS"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": "NSP CSSS: Class 9-12 government school student with >= 55% marks, family income <= \u20b91.5L. All criteria met. \u20b912,000/year (\u20b91,000/month) for Class 9-10."
+    },
+    {
+      "scenario_id": "SCN076",
+      "category": "conflict_reconciliation",
+      "query": "I get PM-KISAN benefit. Can I also claim TS Rythu Bharosa as a Telangana farmer?",
+      "citizen_context": {
+        "age": 40,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 130000,
+        "social_category": "OBC",
+        "education_level": "Class 7",
+        "land_holding_acres": 2.0,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_KISAN",
+        "TS_RYTHU_BHAROSA"
+      ],
+      "ground_truth_citations": [],
+      "reasoning_notes": "PM-KISAN (Central: \u20b96K/yr) and TS Rythu Bharosa (State: \u20b910K/yr) are complementary \u2014 Central + State co-benefit. Both can be claimed simultaneously. Graph edge: CO_BENEFITS_WITH. Total: \u20b916,000/yr for Telangana farmer."
+    },
+    {
+      "scenario_id": "SCN077",
+      "category": "senior_citizen_health",
+      "query": "I am 72 years old with knee arthritis in Telangana. I have a white ration card. Can I get free surgery?",
+      "citizen_context": {
+        "age": 72,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 80000,
+        "social_category": "OBC",
+        "education_level": "None",
+        "land_holding_acres": 0.0,
+        "employment_status": "retired",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_AAROGYASRI",
+        "PM_JAY"
+      ],
+      "ground_truth_citations": [
+        "CIT_AASRI_01"
+      ],
+      "reasoning_notes": "White ration card holder in Telangana. TS Aarogyasri covers knee arthroplasty (listed procedure). PM-JAY also applicable (AB-PMJAY covers SECC families). Aarogyasri and PM-JAY have portability convergence for TS beneficiaries."
+    },
+    {
+      "scenario_id": "SCN078",
+      "category": "disqualification_rule",
+      "query": "I run a private limited company with \u20b9150 crore turnover. Can I apply for Startup India recognition?",
+      "citizen_context": {
+        "age": 35,
+        "gender": "male",
+        "state": "Maharashtra",
+        "annual_family_income": 5000000,
+        "social_category": "General",
+        "education_level": "MBA",
+        "land_holding_acres": 0.0,
+        "employment_status": "entrepreneur",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [
+        "CIT_STARTUP_01"
+      ],
+      "reasoning_notes": "Startup India 2023 definition: turnover must NOT exceed \u20b9100 crore. Company with \u20b9150 crore turnover is disqualified. Also, the entity must not be older than 10 years from incorporation."
+    },
+    {
+      "scenario_id": "SCN079",
+      "category": "school_scholarship",
+      "query": "My daughter studies in Class 5 at a government school in Telangana. What free nutritious meal scheme covers her?",
+      "citizen_context": {
+        "age": 10,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 90000,
+        "social_category": "OBC",
+        "education_level": "Class 5",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_POSHAN_MIDDAY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMPOSHAN_01"
+      ],
+      "reasoning_notes": "Class 5 student in government school. Age 10 <= 14. PM Poshan covers Class 1-8. Automatic entitlement \u2014 no application needed. 450 kcal + 12g protein daily meal."
+    },
+    {
+      "scenario_id": "SCN080",
+      "category": "fish_farmer_eligibility",
+      "query": "I am a fish farmer in Andhra Pradesh with a registered aquaculture pond. Can I get PMMSY subsidy?",
+      "citizen_context": {
+        "age": 38,
+        "gender": "male",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 180000,
+        "social_category": "OBC",
+        "education_level": "Class 10",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMMSY_FISHERIES"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMMSY_01"
+      ],
+      "reasoning_notes": "Registered aquaculture farmer, age >= 18, PMMSY applicable nationwide. OBC category gets 40% capital subsidy (not the 60% SC/ST/Women rate). Eligible for pond expansion, feed plant, or cold storage infrastructure subsidy."
+    },
+    {
+      "scenario_id": "SCN081",
+      "category": "conflict_verification",
+      "query": "Both my state (Telangana) Aarogyasri and PM-JAY say they cover heart surgery for me. Which takes priority?",
+      "citizen_context": {
+        "age": 55,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 90000,
+        "social_category": "BC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "daily_wager",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_AAROGYASRI",
+        "PM_JAY"
+      ],
+      "ground_truth_citations": [
+        "CIT_AASRI_01"
+      ],
+      "reasoning_notes": "Both valid \u2014 RECONCILES_WITH relationship. Telangana has converged Aarogyasri with PM-JAY portability. State scheme (Aarogyasri) covers Telangana hospitals; PM-JAY covers hospitals outside Telangana. Use Aarogyasri card at TS hospitals, AB-PMJAY card for portability."
+    },
+    {
+      "scenario_id": "SCN082",
+      "category": "conflict_verification",
+      "query": "I got PMEGP loan from KVIC. Can I also get Mudra Tarun loan for the same business?",
+      "citizen_context": {
+        "age": 32,
+        "gender": "male",
+        "state": "Madhya Pradesh",
+        "annual_family_income": 150000,
+        "social_category": "OBC",
+        "education_level": "Class 12",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [],
+      "reasoning_notes": "PMEGP and MUDRA both provide subsidized enterprise credit. RBI/DFS guidelines prohibit double-dipping on subsidized credit for the same enterprise. Conflict rule: if PMEGP approved, MUDRA cannot be granted for same unit. Either scheme only."
+    },
+    {
+      "scenario_id": "SCN083",
+      "category": "eligibility_check",
+      "query": "I run a small grocery shop on a city pavement in Chennai. Can I get PM SVANidhi working capital?",
+      "citizen_context": {
+        "age": 44,
+        "gender": "male",
+        "state": "Tamil Nadu",
+        "annual_family_income": 130000,
+        "social_category": "BC",
+        "education_level": "Class 7",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_SVANIDHI"
+      ],
+      "ground_truth_citations": [
+        "CIT_SVANIDHI_01"
+      ],
+      "reasoning_notes": "Urban pavement grocery = street vendor. Age 44 >= 18. Chennai is statutory town with ULB. Certificate of Vending from Greater Chennai Corporation needed. \u20b910,000 first tranche eligible."
+    },
+    {
+      "scenario_id": "SCN084",
+      "category": "eligibility_check",
+      "query": "My son is 14 years old. Can he open a Jan Dhan account?",
+      "citizen_context": {
+        "age": 14,
+        "gender": "male",
+        "state": "West Bengal",
+        "annual_family_income": 100000,
+        "social_category": "SC",
+        "education_level": "Class 9",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMJDY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMJDY_01"
+      ],
+      "reasoning_notes": "Age 14 >= 10 (PMJDY minimum). Minor accounts require guardian co-signature. Age 14 qualifies for minor PMJDY account. Guardian operates account until 18 years."
+    },
+    {
+      "scenario_id": "SCN085",
+      "category": "eligibility_check",
+      "query": "I am a 19-year-old girl from Rajasthan. Can I benefit from Sukanya Samriddhi scheme?",
+      "citizen_context": {
+        "age": 19,
+        "gender": "female",
+        "state": "Rajasthan",
+        "annual_family_income": 150000,
+        "social_category": "General",
+        "education_level": "Class 12",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "INELIGIBLE",
+      "ground_truth_schemes": [],
+      "ground_truth_citations": [],
+      "reasoning_notes": "Sukanya Samriddhi account must be opened before age 10 (girl child). At 19, she is beyond the enrollment age. Account should have been opened when she was under 10. INELIGIBLE for new enrollment."
+    },
+    {
+      "scenario_id": "SCN086",
+      "category": "eligibility_check",
+      "query": "Our family received PMGKAY free ration but the shop gave us only 4 kg instead of 5 kg per person. Is 5 kg the correct entitlement?",
+      "citizen_context": {
+        "age": 35,
+        "gender": "female",
+        "state": "Bihar",
+        "annual_family_income": 70000,
+        "social_category": "BPL",
+        "education_level": "Class 7",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMGKAY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMGKAY_01"
+      ],
+      "reasoning_notes": "Confirmed: PMGKAY entitlement is 5 kg per person per month free under NFSA. Receiving 4 kg is a FPS violation. Beneficiary should file grievance at PDS grievance portal or State Food Department. Entitlement is statutorily 5 kg."
+    },
+    {
+      "scenario_id": "SCN087",
+      "category": "eligibility_check",
+      "query": "I work as an ASHA worker in Telangana. Which health scheme benefit do I qualify for during maternity?",
+      "citizen_context": {
+        "age": 27,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 80000,
+        "social_category": "BC",
+        "education_level": "Class 12",
+        "land_holding_acres": 0.0,
+        "employment_status": "ASHA_worker",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married",
+        "pregnancy_status": true
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMMVY_MATRU",
+        "TS_AROGYA_LAKSHMI",
+        "JANANI_SURAKSHA"
+      ],
+      "ground_truth_citations": [
+        "CIT_AROGYAL_01",
+        "CIT_JSY_01"
+      ],
+      "reasoning_notes": "ASHA workers are classified as informal workers. PMMVY (\u20b95K+\u20b91K), TS Arogya Lakshmi (daily AWC meal), JSY cash incentive for institutional delivery. All three are non-conflicting maternity benefits."
+    },
+    {
+      "scenario_id": "SCN088",
+      "category": "eligibility_check",
+      "query": "I am 55 years old in Telangana and want to start a pottery business. Is PM Vishwakarma or Dalit Bandhu better for me as an SC member?",
+      "citizen_context": {
+        "age": 55,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 85000,
+        "social_category": "SC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_DALIT_BANDHU",
+        "PM_VISHWAKARMA"
+      ],
+      "ground_truth_citations": [
+        "CIT_DALITB_01"
+      ],
+      "reasoning_notes": "Both applicable: PM Vishwakarma (pottery/Kumhaar listed among 18 trades; \u20b915K toolkit + \u20b93L credit). Dalit Bandhu (SC, Telangana; \u20b910L enterprise investment). Dalit Bandhu gives more capital but one-time. Vishwakarma gives sustained tools+credit. Recommend Dalit Bandhu for capital-intensive enterprise, Vishwakarma for tools."
+    },
+    {
+      "scenario_id": "SCN089",
+      "category": "eligibility_check",
+      "query": "My husband is a farmer in MP who died last year. I am 38 years old and now manage the farm. What schemes can I access?",
+      "citizen_context": {
+        "age": 38,
+        "gender": "female",
+        "state": "Madhya Pradesh",
+        "annual_family_income": 100000,
+        "social_category": "OBC",
+        "education_level": "Class 8",
+        "land_holding_acres": 2.5,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "widowed"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_KISAN_2024_AMEND",
+        "PMFBY",
+        "KISAN_CREDIT_CARD",
+        "JANANI_SURAKSHA"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMKISAN24_01",
+        "CIT_PMFBY_01",
+        "CIT_KCC_01"
+      ],
+      "reasoning_notes": "Widowed woman farmer with land. PM-KISAN 2024 Amendment: women co-cultivators now eligible (\u20b96K/yr). PMFBY: crop insurance (2.5 acres, voluntary). KCC: crop credit at 4%. PMMVY/JSY: not applicable (not pregnant stated)."
+    },
+    {
+      "scenario_id": "SCN090",
+      "category": "eligibility_check",
+      "query": "I am 58 years old in Telangana. I have Rs 15,000 savings in an SHG. Can I get a small loan for a vegetable vending unit?",
+      "citizen_context": {
+        "age": 58,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 70000,
+        "social_category": "BC",
+        "education_level": "Class 5",
+        "land_holding_acres": 0.0,
+        "employment_status": "self_employed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "widowed"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_STREE_NIDHI",
+        "PMMY_MUDRA",
+        "PM_SVANIDHI"
+      ],
+      "ground_truth_citations": [
+        "CIT_STRNIDHI_01",
+        "CIT_SVANIDHI_01"
+      ],
+      "reasoning_notes": "SHG member in Telangana: Stree Nidhi emergency \u20b95K + regular credit up to \u20b91L. MUDRA Shishu (\u2264\u20b950K) for small enterprise. SVANidhi if urban street vendor status confirmed. Multiple options."
+    },
+    {
+      "scenario_id": "SCN091",
+      "category": "farmer_welfare",
+      "query": "I am a new fisherman from coastal Andhra. Income is \u20b990,000 a year. Can I get any health or insurance scheme?",
+      "citizen_context": {
+        "age": 30,
+        "gender": "male",
+        "state": "Andhra Pradesh",
+        "annual_family_income": 90000,
+        "social_category": "OBC",
+        "education_level": "Class 8",
+        "land_holding_acres": 0.0,
+        "employment_status": "fisher",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMMSY_FISHERIES",
+        "PM_JAY",
+        "PMGKAY",
+        "PMJDY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMMSY_01"
+      ],
+      "reasoning_notes": "Registered fisherman can apply for PMMSY (aquaculture infra subsidy). PM-JAY (SECC-based eligibility for coastal fishing families). PMGKAY (if ration card). PMJDY (financial inclusion). Multiple schemes applicable."
+    },
+    {
+      "scenario_id": "SCN092",
+      "category": "eligibility_check",
+      "query": "I am a 19-year-old girl getting married next month in Telangana. Our community is Minority. Can I get Shaadi Mubarak benefit?",
+      "citizen_context": {
+        "age": 19,
+        "gender": "female",
+        "state": "Telangana",
+        "annual_family_income": 120000,
+        "social_category": "Minority",
+        "education_level": "Degree",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "TS_KALYANA_LAKSHMI"
+      ],
+      "ground_truth_citations": [
+        "CIT_KL_01"
+      ],
+      "reasoning_notes": "Minority community, Telangana, age 19 >= 18 (legal marriage age), female, first marriage. Qualifies for Shaadi Mubarak (\u20b91,00,116 one-time grant). Application must be submitted before or within 1 year of marriage."
+    },
+    {
+      "scenario_id": "SCN093",
+      "category": "skill_scheme_eligibility",
+      "query": "I am a 26-year-old rural youth with Class 12 pass in Jharkhand. Can I join DDU-GKY for placement training?",
+      "citizen_context": {
+        "age": 26,
+        "gender": "male",
+        "state": "Jharkhand",
+        "annual_family_income": 75000,
+        "social_category": "ST",
+        "education_level": "Class 12",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "DDUGKY"
+      ],
+      "ground_truth_citations": [
+        "CIT_DDUGKY_01"
+      ],
+      "reasoning_notes": "Rural, age 26 (15-35 range), ST (BPL family implied), Jharkhand (DDU-GKY All India Rural). 70% placement guarantee training. \u20b92,000-6,000 migration support."
+    },
+    {
+      "scenario_id": "SCN094",
+      "category": "housing_scheme",
+      "query": "I live in a kutcha house in a Telangana village and earn \u20b91.5 lakh per year. Can I get PMAY-G?",
+      "citizen_context": {
+        "age": 40,
+        "gender": "male",
+        "state": "Telangana",
+        "annual_family_income": 150000,
+        "social_category": "BC",
+        "education_level": "Class 7",
+        "land_holding_acres": 0.5,
+        "employment_status": "daily_wager",
+        "disability": false,
+        "location_type": "rural",
+        "pucca_house_owned": false,
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMAY_G"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMAYG_01"
+      ],
+      "reasoning_notes": "Rural, income \u20b91.5L < \u20b91.8L threshold, no pucca house. All PMAY-G criteria met. \u20b91,20,000 for plain area construction in 3 installments. Must be in Awaas+ survey list or have SECC inclusion."
+    },
+    {
+      "scenario_id": "SCN095",
+      "category": "conflict_detection",
+      "query": "I am in both PMKVY training and have applied for Karnataka Yuva Nidhi allowance. Is this allowed?",
+      "citizen_context": {
+        "age": 21,
+        "gender": "female",
+        "state": "Karnataka",
+        "annual_family_income": 140000,
+        "social_category": "OBC",
+        "education_level": "Diploma",
+        "land_holding_acres": 0.0,
+        "employment_status": "unemployed",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "PARTIAL",
+      "ground_truth_schemes": [
+        "PM_PMKVY"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMKVY_01",
+        "CIT_YUNIDHI_01"
+      ],
+      "reasoning_notes": "PARTIAL conflict: While both can theoretically apply, PMKVY active training enrollment means the person is NOT unemployed (they are in training). Yuva Nidhi requires unemployed status. During PMKVY active training period, Yuva Nidhi is suspended. After PMKVY completion, Yuva Nidhi can be claimed if still unemployed."
+    },
+    {
+      "scenario_id": "SCN096",
+      "category": "eligibility_check",
+      "query": "I am a 35-year-old woman from Maharashtra applying for Startup India. My startup is 3 years old with \u20b940 crore turnover. Am I eligible?",
+      "citizen_context": {
+        "age": 35,
+        "gender": "female",
+        "state": "Maharashtra",
+        "annual_family_income": 2000000,
+        "social_category": "General",
+        "education_level": "MBA",
+        "land_holding_acres": 0.0,
+        "employment_status": "entrepreneur",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "STARTUP_INDIA"
+      ],
+      "ground_truth_citations": [
+        "CIT_STARTUP_01"
+      ],
+      "reasoning_notes": "Startup India 2023: turnover \u20b940Cr < \u20b9100Cr limit. Entity age 3 years < 10 years. Innovating product/service. All criteria met. DPIIT recognition + tax exemption + patent fee rebate applicable."
+    },
+    {
+      "scenario_id": "SCN097",
+      "category": "eligibility_check",
+      "query": "My TB treatment is ongoing for 3 months in Delhi. Am I getting the correct Nikshay Poshan support amount?",
+      "citizen_context": {
+        "age": 28,
+        "gender": "male",
+        "state": "Delhi",
+        "annual_family_income": 95000,
+        "social_category": "SC",
+        "education_level": "Class 10",
+        "land_holding_acres": 0.0,
+        "employment_status": "daily_wager",
+        "disability": true,
+        "location_type": "urban",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PM_TB_MUKT"
+      ],
+      "ground_truth_citations": [
+        "CIT_NKSHAY_01"
+      ],
+      "reasoning_notes": "TB patient for 3 months, Nikshay ID registered. Entitled to \u20b9500/month for all 3 months = \u20b91,500 so far. v2022_ENHANCED is active (not v2018_LAUNCH \u20b9500 which is same but now verified active). If not received, file complaint at Nikshay portal."
+    },
+    {
+      "scenario_id": "SCN098",
+      "category": "eligibility_check",
+      "query": "My 8-year-old daughter is an orphan in Rajasthan and living with us as her paternal uncle. What is her monthly Palanhar amount?",
+      "citizen_context": {
+        "age": 8,
+        "gender": "female",
+        "state": "Rajasthan",
+        "annual_family_income": 85000,
+        "social_category": "General",
+        "education_level": "Class 2",
+        "land_holding_acres": 0.0,
+        "employment_status": "student",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "single"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "RAJASTHAN_PALANHAR"
+      ],
+      "ground_truth_citations": [
+        "CIT_PALANHAR_01"
+      ],
+      "reasoning_notes": "Orphan (both parents deceased), age 8 (6-18 years category), Rajasthan domicile. \u20b94,000/month (age 6-18 rate) for child + \u20b92,000/year annual clothing grant. Uncle is eligible Palanhar (guardian)."
+    },
+    {
+      "scenario_id": "SCN099",
+      "category": "farmer_credit",
+      "query": "My KCC was issued in 1999 under old guidelines. I heard the interest rate changed in 2020. What is my current interest rate?",
+      "citizen_context": {
+        "age": 55,
+        "gender": "male",
+        "state": "Punjab",
+        "annual_family_income": 200000,
+        "social_category": "General",
+        "education_level": "Class 8",
+        "land_holding_acres": 4.0,
+        "employment_status": "farmer",
+        "disability": false,
+        "location_type": "rural",
+        "marital_status": "married"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "KISAN_CREDIT_CARD"
+      ],
+      "ground_truth_citations": [
+        "CIT_KCC_01"
+      ],
+      "reasoning_notes": "Bi-temporal: v1998_ORIG (superseded 2020-01-31). v2020_REFORMED (active from 2020-02-01) gives 4% net interest (2% subvention + 3% incentive). Old KCC cards auto-migrated to new scheme. Current rate: 4% net effective for prompt repayment on loans up to \u20b93L."
+    },
+    {
+      "scenario_id": "SCN100",
+      "category": "financial_inclusion",
+      "query": "I am a 48-year-old woman in Karnataka whose husband just died. I have no bank account. Which schemes should I enroll in first?",
+      "citizen_context": {
+        "age": 48,
+        "gender": "female",
+        "state": "Karnataka",
+        "annual_family_income": 95000,
+        "social_category": "BC",
+        "education_level": "Class 7",
+        "land_holding_acres": 0.0,
+        "employment_status": "homemaker",
+        "disability": false,
+        "location_type": "urban",
+        "marital_status": "widowed"
+      },
+      "ground_truth_decision": "ELIGIBLE",
+      "ground_truth_schemes": [
+        "PMJDY",
+        "KA_GRUHA_LAKSHMI"
+      ],
+      "ground_truth_citations": [
+        "CIT_PMJDY_01",
+        "CIT_GRULAK_01"
+      ],
+      "reasoning_notes": "Priority 1: PMJDY zero-balance account (age >= 10, any citizen). Enables DBT. Priority 2: Karnataka Gruha Lakshmi (woman, Karnataka ration card holder, \u20b92,000/month). Being newly widowed and head of household in Karnataka, she qualifies for Gruha Lakshmi immediately after opening bank account."
+    }
+  ]
+}

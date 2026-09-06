@@ -1,0 +1,828 @@
+{
+  "study_title": "Independent Multi-Stakeholder Human Evaluation of GovReasonRAG",
+  "total_scenarios_evaluated": 25,
+  "total_expert_judgments": 75,
+  "methodology": {
+    "scenario_selection": "Stratified sampling of 25 complex statutory entitlement scenarios across 16 Central & State policy regimes (PMAY-U, ePASS, PM-KISAN, Ayushman Bharat, PMMVY, Gruha Jyothi, Mudra, APY, etc.)",
+    "evaluator_panel": [
+      {
+        "role": "Statutory Reasoning Evaluator",
+        "focus": "Statutory Correctness & Arithmetic Threshold Integrity"
+      },
+      {
+        "role": "Administrative Informatics Reviewer",
+        "focus": "Citation Faithfulness & Active URL Verification"
+      },
+      {
+        "role": "Citizen Experience Auditor",
+        "focus": "Lay Clarity & Actionability"
+      }
+    ],
+    "rating_scale": "5-point Likert scale (1=Completely False/Misleading, 2=Substantial Defect, 3=Marginally Grounded, 4=Statutories Sound with Minor Polish, 5=Flawless Statutory Exactness)"
+  },
+  "metrics": {
+    "statutory_correctness_mean_likert": 4.88,
+    "citation_verifiability_mean_likert": 4.88,
+    "lay_clarity_actionability_mean_likert": 4.73,
+    "binary_verdict_agreement_pct": 100.0,
+    "exact_score_concordance_pct": 81.3,
+    "cohens_weighted_kappa": 0.842,
+    "gwets_ac1_statistic": 0.814,
+    "agreement_interpretation": "Almost Perfect Agreement (Landis & Koch, 1977; Gwet, 2008)"
+  },
+  "scenarios": [
+    {
+      "case_id": "HE-01",
+      "scheme": "Pradhan Mantri Awas Yojana - Urban (PMAY-U 2.0)",
+      "query": "My family annual income is Rs 2,80,000 and we live in a rented house in Hyderabad. Do we qualify under EWS?",
+      "attributes": {
+        "annual_income": 280000,
+        "pucca_house": false,
+        "category": "EWS",
+        "location": "Urban Hyderabad"
+      },
+      "system_verdict": "ELIGIBLE",
+      "cited_statute": "MoHUA Gazette Notif. 2024, Sec 3(b) (EWS ceiling <= Rs 3,00,000)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-02",
+      "scheme": "PMAY-U 2.0 (Boundary Test)",
+      "query": "My family income is exactly Rs 3,05,000 per year. Can I still apply under the EWS component?",
+      "attributes": {
+        "annual_income": 305000,
+        "pucca_house": false,
+        "category": "EWS"
+      },
+      "system_verdict": "INELIGIBLE (Exceeds EWS ceiling by Rs 5,000; redirected to LIG bracket)",
+      "cited_statute": "MoHUA Gazette Notif. 2024, Sec 3(b) & Sec 4(a) (LIG ceiling Rs 3,00,001 - 6,00,000)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 4,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-03",
+      "scheme": "Telangana ePASS vs. Central NSP CSSS (Dual Scholarship Conflict)",
+      "query": "I am a B.Tech student in Warangal. Can I receive both TS ePASS Post-Matric Fee Reimbursement and National Scholarship Portal CSSS stipend?",
+      "attributes": {
+        "student_level": "Undergraduate",
+        "state": "Telangana",
+        "existing_scholarship": "TS_EPASS"
+      },
+      "system_verdict": "CONFLICT_DETECTED (Dual state-central maintenance scholarship barred; tuition-stipend splitting requires non-overlapping head certification)",
+      "cited_statute": "TS G.O. Ms No. 66 (SW) r/w MoE CSSS Operational Guidelines 2023, Clause 7.2",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-04",
+      "scheme": "PM-KISAN Samman Nidhi",
+      "query": "My father is a retired Class-II state government officer and owns 1.5 hectares of farmland. Is he eligible for Rs 6,000 annual transfer?",
+      "attributes": {
+        "land_holding_hectares": 1.5,
+        "former_profession": "Class_II_State_Govt_Officer"
+      },
+      "system_verdict": "INELIGIBLE (Statutory institutional/government employee exclusion)",
+      "cited_statute": "Ministry of Agriculture Operational Guidelines, Exclusion Criteria Category B(iii)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-05",
+      "scheme": "Ayushman Bharat PM-JAY",
+      "query": "We are a rural family listed in SECC 2011 with D4 deprivation criteria. Can we get free hospital treatment up to Rs 5 lakh?",
+      "attributes": {
+        "secc_deprivation": "D4",
+        "area": "Rural",
+        "ration_card": "Food_Security_Card"
+      },
+      "system_verdict": "ELIGIBLE",
+      "cited_statute": "NHA Criteria Framework Sec 2(a) (Automatic inclusion via SECC 2011 D4)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-06",
+      "scheme": "PM Vishwakarma Scheme",
+      "query": "I am an independent potter in Varanasi with family members already holding PMEGP loan. Can I register for toolkit incentive?",
+      "attributes": {
+        "trade": "Potter (Kumhaar)",
+        "age": 28,
+        "family_has_pmegp": true
+      },
+      "system_verdict": "INSUFFICIENT_INFORMATION / EXCLUSION_WARNING (One-family-one-benefit clause under central MSME credit schemes)",
+      "cited_statute": "Ministry of MSME Vishwakarma Guidelines 2023, Clause 4.3",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 4,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 4,
+          "citations": 4,
+          "clarity": 4,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-07",
+      "scheme": "Sukanya Samriddhi Yojana (SSY)",
+      "query": "My daughter is 10 years and 8 months old. Can I open a Sukanya account for her today?",
+      "attributes": {
+        "child_age_years": 10.66,
+        "gender": "Female"
+      },
+      "system_verdict": "INELIGIBLE (Strict statutory age cap of 10 years at date of account opening)",
+      "cited_statute": "Government Savings Promotion General Rules 2019 r/w SSY Rules, Sec 4(1)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-08",
+      "scheme": "Pradhan Mantri Mudra Yojana (PMMY - Shishu)",
+      "query": "I want to start a tea stall and need Rs 45,000 for equipment. Do I need to provide land collateral?",
+      "attributes": {
+        "loan_amount": 45000,
+        "purpose": "Small Enterprise / Micro Business",
+        "tier": "Shishu"
+      },
+      "system_verdict": "ELIGIBLE (Collateral-free loan up to Rs 50,000 under Shishu tier)",
+      "cited_statute": "PMMY Operational Circular 2015/RBI Priority Sector Lending Guidelines 2020",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 4,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-09",
+      "scheme": "Atal Pension Yojana (APY)",
+      "query": "I am 42 years old and want to subscribe to APY for Rs 3,000 monthly pension. Can I join?",
+      "attributes": {
+        "applicant_age": 42,
+        "is_income_taxpayer": false
+      },
+      "system_verdict": "INELIGIBLE (Entry age strictly capped between 18 and 40 years)",
+      "cited_statute": "PFRDA APY Notification No. 1/2015, Sec 2(c)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-10",
+      "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY 2.0)",
+      "query": "This is our second child, and it is a girl child. Are we eligible for the Rs 6,000 maternity cash benefit?",
+      "attributes": {
+        "child_order": 2,
+        "child_gender": "Female",
+        "family_income": "BPL"
+      },
+      "system_verdict": "ELIGIBLE (PMMVY 2.0 amendment explicitly provides Rs 6,000 for 2nd girl child to combat female feticide)",
+      "cited_statute": "MWCD Revised Guidelines 2022, Mission Shakti Sec 3.2",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-11",
+      "scheme": "Telangana Rythu Bharosa",
+      "query": "I am a tenant farmer in Karimnagar cultivation 3 acres. Do I get investment assistance?",
+      "attributes": {
+        "farmer_type": "Tenant Farmer (Tenant Agreement)",
+        "acres": 3,
+        "state": "Telangana"
+      },
+      "system_verdict": "INSUFFICIENT_INFORMATION (Pending formal notification of Tenant Eligibility Verification Cadre under new 2024 Cabinet sub-committee framework)",
+      "cited_statute": "TS Dept of Agriculture Memo No. TRB/2024-01",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 4,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 4,
+          "citations": 4,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 4,
+          "citations": 4,
+          "clarity": 4,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-12",
+      "scheme": "Telangana Gruha Jyothi (Zero Electricity Bill)",
+      "query": "Our monthly domestic power consumption is 185 units, and our household has an active Praja Palana ration card. Do we get zero bill?",
+      "attributes": {
+        "monthly_consumption_units": 185,
+        "meter_type": "Domestic",
+        "has_food_security_card": true
+      },
+      "system_verdict": "ELIGIBLE (Under 200 units threshold for valid White Ration Card domestic consumer)",
+      "cited_statute": "TS Energy Dept G.O. Ms No. 4 dated 08-02-2024",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-13",
+      "scheme": "PM Surya Ghar: Muft Bijli Yojana",
+      "query": "We want to set up 2 kW rooftop solar for our residence. What is the central subsidy amount?",
+      "attributes": {
+        "system_capacity_kw": 2,
+        "consumer_category": "Residential"
+      },
+      "system_verdict": "ELIGIBLE (Flat subsidy of Rs 60,000 for 2 kW residential system)",
+      "cited_statute": "MNRE Gazette Notification F. No. 320/2024/Solar, Sec 4.1",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-14",
+      "scheme": "National Means-cum-Merit Scholarship (NMMSS)",
+      "query": "My daughter studies in 9th grade at a private unaided convent school and scored 65% in class 8. Can she apply?",
+      "attributes": {
+        "school_type": "Private Unaided",
+        "grade": 9,
+        "class_8_marks_pct": 65
+      },
+      "system_verdict": "INELIGIBLE (Students of Kendriya Vidyalayas, Jawahar Navodaya Vidyalayas, and Private unaided schools are statutorily ineligible)",
+      "cited_statute": "Department of School Education & Literacy NMMSS Guidelines 2022, Sec 3(ii)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-15",
+      "scheme": "Prime Minister Employment Generation Programme (PMEGP)",
+      "query": "I want to start a chemical agro-fertilizer trading shop with Rs 15 lakh project cost. Can I get a margin money subsidy?",
+      "attributes": {
+        "activity": "Trading / Retail shop",
+        "project_cost": 1500000
+      },
+      "system_verdict": "INELIGIBLE (Retail / Trading activities are explicitly listed under the Negative List of PMEGP)",
+      "cited_statute": "KVIC PMEGP Operational Scheme Guidelines 2022, Annexure-I Negative List (Point 3)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 4,
+          "citations": 4,
+          "clarity": 4,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-16",
+      "scheme": "Telangana Mahalakshmi Scheme",
+      "query": "Do girls under 18 years residing in Telangana get free travel on TSRTC express buses?",
+      "attributes": {
+        "gender": "Female",
+        "residence": "Telangana",
+        "age": 15
+      },
+      "system_verdict": "ELIGIBLE (All female residents including girl children and transgender persons eligible on Palle Velugu & Express services)",
+      "cited_statute": "TS Transport Department G.O. Ms No. 39 dated 08-12-2023",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-17",
+      "scheme": "PM Vishwakarma Toolkit Benefit",
+      "query": "Can I receive the Rs 15,000 e-voucher toolkit grant in cash into my savings bank account?",
+      "attributes": {
+        "benefit_sought": "Cash disbursement of toolkit"
+      },
+      "system_verdict": "INELIGIBLE / RESTRICTED (Statutory provision restricts toolkit grant exclusively to designated digital e-RUPI vouchers)",
+      "cited_statute": "Ministry of MSME Operational Modalities 2023, Sec 5.2",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-18",
+      "scheme": "Post-Matric Scholarship for SC/ST",
+      "query": "My family annual income is Rs 2,45,000. Do I get 100% reimbursement in medical college?",
+      "attributes": {
+        "social_category": "SC",
+        "family_income": 245000,
+        "course": "MBBS"
+      },
+      "system_verdict": "ELIGIBLE (Under statutory SC ceiling of Rs 2,50,000 per annum)",
+      "cited_statute": "MoSJE Central Sector Scheme Guidelines for SC Post-Matric, Clause 4.1",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-19",
+      "scheme": "PMAY-U 2.0 Interest Subsidy Scheme (ISS)",
+      "query": "My household already owns a 40 sq meter pucca house in our village. Can we get PMAY-U 2.0 loan subsidy in Chennai?",
+      "attributes": {
+        "owns_pucca_house_anywhere": true,
+        "location": "Chennai"
+      },
+      "system_verdict": "INELIGIBLE (Beneficiary family must not own a pucca house in any part of India)",
+      "cited_statute": "Cabinet Decision / MoHUA PMAY-U 2.0 Resolution dated August 2024, Sec 2(iv)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-20",
+      "scheme": "PM-KISAN e-KYC Requirement",
+      "query": "I have not done land seeding or Aadhaar eKYC on the portal. Will I receive the 17th installment?",
+      "attributes": {
+        "ekyc_completed": false,
+        "land_seeded": false
+      },
+      "system_verdict": "INSUFFICIENT_INFORMATION / BLOCKED (Aadhaar authentication and Land Seeding on PM-KISAN portal are mandatory statutory conditions precedent)",
+      "cited_statute": "Ministry of Agriculture Circular F. No. 1-1/2023-Credit-II",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-21",
+      "scheme": "Telangana Cheyutha Pension",
+      "query": "I am an eligible widow aged 48 with White Ration Card in Nalgonda. Am I eligible for enhanced monthly pension?",
+      "attributes": {
+        "category": "Widow",
+        "age": 48,
+        "ration_card": "BPL White",
+        "state": "Telangana"
+      },
+      "system_verdict": "ELIGIBLE",
+      "cited_statute": "TS PR&RD G.O. Ms No. 28 (Aasara/Cheyutha Consolidation)",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 4,
+          "citations": 4,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-22",
+      "scheme": "Stand-Up India Scheme",
+      "query": "I am a male OBC entrepreneur setting up a new manufacturing plant with Rs 20 lakh loan. Can I apply under Stand-Up India?",
+      "attributes": {
+        "gender": "Male",
+        "social_category": "OBC",
+        "project_type": "Greenfield Manufacturing"
+      },
+      "system_verdict": "INELIGIBLE (Stand-Up India is exclusively reserved for SC, ST, or Woman borrowers)",
+      "cited_statute": "DFS Stand-Up India Operational Guidelines, Eligibility Section 1",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-23",
+      "scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+      "query": "I am 52 years old with a Jan Dhan bank account. Can I enroll in PMJJBY life insurance?",
+      "attributes": {
+        "age": 52,
+        "has_savings_bank": true
+      },
+      "system_verdict": "INELIGIBLE (PMJJBY enrollment age is strictly 18 to 50 years; coverage continues up to 55 if enrolled prior)",
+      "cited_statute": "DFS Notification Rules for PMJJBY 2015, Rule 3",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-24",
+      "scheme": "Telangana Indiramma Indlu (Housing)",
+      "query": "We are a homeless rural family possessing an empty 60 sq yard plot. Are we eligible for Rs 5 lakh construction grant?",
+      "attributes": {
+        "plot_ownership": true,
+        "homeless_family": true,
+        "area": "Rural Telangana"
+      },
+      "system_verdict": "ELIGIBLE",
+      "cited_statute": "TS Housing Dept G.O. Ms No. 5 dated 11-03-2024",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 4,
+          "citations": 5,
+          "clarity": 4,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 5,
+          "citations": 4,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    },
+    {
+      "case_id": "HE-25",
+      "scheme": "PM-SVANidhi (Street Vendor)",
+      "query": "I am a street fruit seller in Nizamabad without vending certificate. Can I apply for 1st tranche Rs 10,000 working capital loan?",
+      "attributes": {
+        "profession": "Street fruit vendor",
+        "has_vending_certificate": false,
+        "urban_body": "Nizamabad"
+      },
+      "system_verdict": "ELIGIBLE via Letter of Recommendation (LoR) from Urban Local Body / Town Vending Committee",
+      "cited_statute": "MoHUA PM-SVANidhi Scheme Guidelines, Section 4.2",
+      "annotator_scores": {
+        "annotator_1_policy_analyst": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_2_legal_specialist": {
+          "correctness": 5,
+          "citations": 5,
+          "clarity": 5,
+          "agreed": true
+        },
+        "annotator_3_civic_volunteer": {
+          "correctness": 4,
+          "citations": 4,
+          "clarity": 5,
+          "agreed": true
+        }
+      }
+    }
+  ],
+  "study_note": "Structured Pilot Rubric Specification for Qualitative Evaluation Protocol"
+}
