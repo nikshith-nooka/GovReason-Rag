@@ -386,18 +386,18 @@ export default function PolicyTimelinePage() {
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">
+            <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-[#16805A] bg-[#D8F3EA] px-2.5 py-0.5 rounded-full">
               <History className="w-3 h-3" />
               Bi-Temporal Audit Rail
             </span>
-            <span className="text-xs text-gray-400 font-medium">
+            <span className="text-xs text-[#71807B] font-medium">
               4,986 Statutory Policies
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight mt-1">
+          <h1 className="text-2xl font-bold text-[#17211F] tracking-tight mt-1">
             Policy Timeline & Version Evolution
           </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-0.5 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#71807B] mt-0.5 leading-relaxed">
             Track how gazette regulations, eligibility rules, and income thresholds evolve over time across every government sector.
           </p>
         </div>
@@ -406,7 +406,7 @@ export default function PolicyTimelinePage() {
         <div className="flex items-center gap-2 shrink-0 pt-1">
           <Link
             href="/compare"
-            className="text-xs font-semibold text-[#123C35] bg-white border border-[#CFD9CE] hover:bg-[#F5F7F5] px-3.5 py-2 rounded-lg flex items-center gap-1.5 transition-colors shadow-sm"
+            className="text-xs font-semibold text-[#123C35] bg-white border border-[#E5E9E6] hover:bg-[#FAFAF7] px-3.5 py-2 rounded-lg flex items-center gap-1.5 transition-colors shadow-sm"
           >
             <GitCommit className="w-3.5 h-3.5" />
             <span>Compare Versions</span>
@@ -423,7 +423,7 @@ export default function PolicyTimelinePage() {
 
       {/* Category Tabs */}
       <div className="space-y-2">
-        <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-500">
+        <label className="block text-[11px] font-bold uppercase tracking-wider text-[#71807B]">
           Select Policy Category:
         </label>
         <div className="flex flex-wrap items-center gap-2">
@@ -443,14 +443,14 @@ export default function PolicyTimelinePage() {
                 className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all shadow-sm ${
                   isSelected
                     ? "bg-[#123C35] text-white ring-2 ring-[#123C35]/20 shadow-md"
-                    : "bg-white border border-[#CFD9CE] text-gray-700 hover:bg-gray-50 hover:border-gray-400"
+                    : "bg-white border border-[#E5E9E6] text-[#17211F] hover:bg-gray-50 hover:border-gray-400"
                 }`}
               >
                 <Icon className={`w-3.5 h-3.5 ${isSelected ? "text-emerald-300" : "text-[#2F6B5F]"}`} />
                 <span>{cat.label}</span>
                 <span
                   className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
-                    isSelected ? "bg-white/20 text-white" : "bg-gray-100 text-gray-600"
+                    isSelected ? "bg-white/20 text-white" : "bg-gray-100 text-[#71807B]"
                   }`}
                 >
                   {actualCount}
@@ -462,44 +462,44 @@ export default function PolicyTimelinePage() {
       </div>
 
       {/* Scheme Selector Bar for Current Category */}
-      <div className="bg-white border border-[#CFD9CE] rounded-2xl p-4 shadow-sm space-y-3">
+      <div className="bg-white border border-[#E5E9E6] rounded-2xl p-4 shadow-sm space-y-3">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
           <div className="space-y-0.5">
             <div className="flex items-center gap-2">
-              <h2 className="text-xs font-bold text-gray-900 uppercase tracking-wider">
+              <h2 className="text-xs font-bold text-[#17211F] uppercase tracking-wider">
                 Policies Under {selectedCategory}
               </h2>
-              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
+              <span className="text-[11px] font-semibold text-[#16805A] bg-[#EBF7F2] border border-[#B2E2CE] px-2 py-0.5 rounded-md">
                 {schemesInCurrentCategory.length} Total Policies
               </span>
             </div>
-            <p className="text-[11px] text-gray-500">
+            <p className="text-[11px] text-[#71807B]">
               Select any statutory scheme below to view its complete gazette amendments and version lineage.
             </p>
           </div>
 
           <div className="relative w-full lg:w-72">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#71807B]" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={`Search ${schemesInCurrentCategory.length} ${selectedCategory} schemes...`}
-              className="w-full bg-[#F5F7F5] border border-[#CFD9CE] rounded-lg pl-8 pr-3 py-1.5 text-xs text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#123C35] focus:bg-white transition-all"
+              className="w-full bg-[#FAFAF7] border border-[#E5E9E6] rounded-lg pl-8 pr-3 py-1.5 text-xs text-[#17211F] placeholder-gray-400 focus:outline-none focus:border-[#123C35] focus:bg-white transition-all"
             />
           </div>
         </div>
 
         {/* The Scheme Dropdown populated with ALL policies under this category */}
         <div className="space-y-1 pt-1 border-t border-gray-100">
-          <label className="block text-[11px] font-semibold text-gray-500">
+          <label className="block text-[11px] font-semibold text-[#71807B]">
             Active Scheme in Timeline:
           </label>
           <select
             id="policy-scheme-dropdown"
             value={currentScheme?.id || ""}
             onChange={(e) => setSelectedSchemeId(e.target.value)}
-            className="w-full bg-white border border-[#CFD9CE] rounded-xl px-3.5 py-2.5 text-xs font-semibold text-[#123C35] focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/15 cursor-pointer shadow-sm hover:border-[#123C35] transition-colors"
+            className="w-full bg-white border border-[#E5E9E6] rounded-xl px-3.5 py-2.5 text-xs font-semibold text-[#123C35] focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/15 cursor-pointer shadow-sm hover:border-[#123C35] transition-colors"
           >
             {filteredCategorySchemes.length > 0 ? (
               filteredCategorySchemes.map((s) => (
@@ -515,23 +515,23 @@ export default function PolicyTimelinePage() {
 
         {/* Selected Scheme Info Card */}
         {currentScheme && (
-          <div className="bg-[#F8FAF8] border border-[#E2E8E0] rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="bg-[#F8FAF8] border border-[#E5E9E6] rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <span className="font-mono text-[10px] font-bold bg-[#123C35] text-white px-2 py-0.5 rounded">
                   {currentScheme.id}
                 </span>
-                <span className="font-bold text-xs sm:text-sm text-gray-900">
+                <span className="font-bold text-xs sm:text-sm text-[#17211F]">
                   {currentScheme.name}
                 </span>
               </div>
-              <p className="text-xs text-gray-600">
-                Department: <span className="font-medium text-gray-800">{currentScheme.department}</span>
+              <p className="text-xs text-[#71807B]">
+                Department: <span className="font-medium text-[#17211F]">{currentScheme.department}</span>
               </p>
             </div>
 
             <div className="flex items-center gap-2 shrink-0">
-              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#16805A] bg-[#D8F3EA] px-2.5 py-1 rounded-full">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>Statutory Verified</span>
               </span>
@@ -542,7 +542,7 @@ export default function PolicyTimelinePage() {
 
       {/* Timeline Visual Container */}
       <div className="relative pl-6 sm:pl-12 pt-4">
-        <div className="absolute left-[3.25rem] sm:left-[4.75rem] top-6 bottom-6 w-0.5 bg-[#E2E8E0]" />
+        <div className="absolute left-[3.25rem] sm:left-[4.75rem] top-6 bottom-6 w-0.5 bg-[#E5E9E6]" />
 
         <div className="space-y-8">
           {currentEvents.length > 0 ? (
@@ -552,13 +552,13 @@ export default function PolicyTimelinePage() {
 
               return (
                 <div key={idx} className="relative flex items-start gap-6 sm:gap-8 group">
-                  <div className="w-12 sm:w-14 shrink-0 text-right font-bold text-sm text-gray-700 pt-3">
+                  <div className="w-12 sm:w-14 shrink-0 text-right font-bold text-sm text-[#17211F] pt-3">
                     {evt.year}
                   </div>
 
                   <div className="relative shrink-0 pt-3 z-10">
                     {isCurrent ? (
-                      <div className="w-5 h-5 rounded-full bg-emerald-600 border-4 border-emerald-100 flex items-center justify-center shadow-sm ring-2 ring-emerald-600/30" />
+                      <div className="w-5 h-5 rounded-full bg-[#16805A] border-4 border-emerald-100 flex items-center justify-center shadow-sm ring-2 ring-emerald-600/30" />
                     ) : isAmendment ? (
                       <div className="w-4 h-4 rounded-full bg-[#D97706] border-2 border-white shadow-sm mt-0.5" />
                     ) : (
@@ -570,16 +570,16 @@ export default function PolicyTimelinePage() {
                     className={`flex-1 rounded-xl p-5 border transition-all ${
                       isCurrent
                         ? "bg-white border-emerald-500 shadow-md ring-1 ring-emerald-500/20"
-                        : "bg-white border-[#E2E8E0] shadow-sm hover:border-gray-300"
+                        : "bg-white border-[#E5E9E6] shadow-sm hover:border-gray-300"
                     }`}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <div className="flex items-center gap-2.5">
-                        <h3 className="font-bold text-sm text-gray-900">
+                        <h3 className="font-bold text-sm text-[#17211F]">
                           {evt.title}
                         </h3>
                         {isCurrent && (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full">
+                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#16805A] bg-[#D8F3EA] px-2 py-0.5 rounded-full">
                             <CheckCircle2 className="w-3 h-3" />
                             <span>Current In Force</span>
                           </span>
@@ -590,22 +590,22 @@ export default function PolicyTimelinePage() {
                           </span>
                         )}
                       </div>
-                      <div className="text-xs font-semibold text-gray-400 flex items-center gap-1">
+                      <div className="text-xs font-semibold text-[#71807B] flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
                         <span>{evt.date}</span>
                       </div>
                     </div>
 
-                    <p className="text-xs text-gray-600 mt-1.5 leading-relaxed">
+                    <p className="text-xs text-[#71807B] mt-1.5 leading-relaxed">
                       {evt.description}
                     </p>
 
                     {evt.changes && evt.changes.length > 0 && (
                       <div className="mt-3 pt-3 border-t border-gray-100">
-                        <span className="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                        <span className="block text-[10px] font-bold uppercase tracking-wider text-[#71807B] mb-1.5">
                           Notified Provisions & Clause Changes:
                         </span>
-                        <ul className="space-y-1.5 text-xs text-gray-600">
+                        <ul className="space-y-1.5 text-xs text-[#71807B]">
                           {evt.changes.map((c, cIdx) => (
                             <li key={cIdx} className="flex items-start gap-2">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#123C35] mt-1 shrink-0" />
@@ -636,7 +636,7 @@ export default function PolicyTimelinePage() {
               );
             })
           ) : (
-            <div className="bg-white border border-[#E2E8E0] rounded-xl p-8 text-center text-gray-500">
+            <div className="bg-white border border-[#E5E9E6] rounded-xl p-8 text-center text-[#71807B]">
               No timeline events recorded for this scheme.
             </div>
           )}

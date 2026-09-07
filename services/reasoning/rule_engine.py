@@ -29,6 +29,13 @@ class PolicyRuleEngine:
         if param == "annual_family_income" and (getattr(context, "age", 0) or 0) >= 70 and ("PM_JAY" in rule.policy_id or "AB-PMJAY" in rule.policy_id):
             return True, "Age >= 70 qualifies for universal Ayushman cover (Income criterion waived)"
 
+        # EWS specific income ceiling (₹3 Lakhs) for PMAY
+        if param == "annual_family_income" and getattr(context, "social_category", "") == "EWS" and "PMAY" in rule.policy_id:
+            ews_cap = 300000.0
+            satisfied = float(val) <= ews_cap
+            msg = f"annual_family_income (₹{val:,.0f}) <= EWS ceiling (₹{ews_cap:,.0f})" if satisfied else f"annual_family_income (₹{val:,.0f}) exceeds EWS ceiling of ₹{ews_cap:,.0f} (Note: Qualifies under LIG bracket up to ₹6,00,000)"
+            return satisfied, msg
+
         # Comparison Logic
         try:
             if op == "<=":

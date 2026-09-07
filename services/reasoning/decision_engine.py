@@ -77,12 +77,14 @@ class DecisionEngine:
             )
 
         # Primary Aggregate Status
-        if not coverage.decision_authorized and coverage.critical_missing > 0:
-            primary = DecisionStatus.INSUFFICIENT_INFORMATION
+        if policy_results and policy_results[0].decision == DecisionStatus.INELIGIBLE:
+            primary = DecisionStatus.INELIGIBLE
         elif any(s == DecisionStatus.ELIGIBLE for s in statuses):
             primary = DecisionStatus.ELIGIBLE
         elif any(s == DecisionStatus.CONDITIONALLY_ELIGIBLE for s in statuses):
             primary = DecisionStatus.CONDITIONALLY_ELIGIBLE
+        elif not coverage.decision_authorized and coverage.critical_missing > 0:
+            primary = DecisionStatus.INSUFFICIENT_INFORMATION
         elif any(s == DecisionStatus.INSUFFICIENT_INFORMATION for s in statuses):
             primary = DecisionStatus.INSUFFICIENT_INFORMATION
         else:

@@ -69,13 +69,50 @@ class GovReasonRAGPipeline:
         if age_match and ctx.age is None:
             ctx.age = int(age_match.group(1))
 
-        # Extract Income
+        # Extract Income (supports Lakh, K, and comma-separated numbers like Rs 4,50,000)
         income_match = re.search(r"(?:income|earning|salary)[^\d]*([\d\.]+)\s*(?:lakh|l|lac|k)", q_lower)
         if not income_match:
             income_match = re.search(r"₹?\s*([\d\.]+)\s*(?:lakh|l|lac)", q_lower)
         if income_match and ctx.annual_family_income is None:
             num = float(income_match.group(1))
             ctx.annual_family_income = num * 100000.0
+        elif ctx.annual_family_income is None:
+            raw_num_match = re.search(r"(?:rs\.?|₹|inr|income(?: of)?|salary(?: of)?)\s*([\d,]{4,10})", q_lower)
+            if raw_num_match:
+                try:
+                    val = float(raw_num_match.group(1).replace(",", ""))
+                    if val > 1000:
+                        ctx.annual_family_income = val
+                except Exception:
+                    pass
+
+        # Extract Category / EWS
+        if "ews" in q_lower or "economically weaker" in q_lower:
+            ctx.social_category = "EWS"
+        elif "sc" in q_lower or "scheduled caste" in q_lower:
+            ctx.social_category = "SC"
+        elif "st" in q_lower or "scheduled tribe" in q_lower:
+            ctx.social_category = "ST"
+        elif "obc" in q_lower:
+            ctx.social_category = "OBC"
+
+        # Extract Location
+        if "urban" in q_lower or "city" in q_lower or "town" in q_lower:
+            ctx.location_type = "urban"
+        elif "rural" in q_lower or "village" in q_lower:
+            ctx.location_type = "rural"
+
+        # Extract Pucca House
+        if "no pucca" in q_lower or "don't own" in q_lower or "do not own" in q_lower or "no house" in q_lower or "rented" in q_lower:
+            ctx.pucca_house_owned = False
+        elif "own a pucca" in q_lower or "own pucca" in q_lower or "own a house" in q_lower or "own a concrete" in q_lower:
+            ctx.pucca_house_owned = True
+        elif "pmay" in q_lower and ctx.pucca_house_owned is None:
+            ctx.pucca_house_owned = False
+
+        # Extract Taxpayer status
+        if "income tax" in q_lower and ("paid" in q_lower or "payer" in q_lower or "pay" in q_lower):
+            ctx.is_income_tax_payer = True
 
         # Extract State / Domicile
         if "telangana" in q_lower or "hyderabad" in q_lower:

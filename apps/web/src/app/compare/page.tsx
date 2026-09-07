@@ -7,7 +7,10 @@ import {
   Equal,
   GitCompare,
   CheckCircle2,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Sparkles,
+  ArrowRight,
+  ShieldCheck
 } from "lucide-react";
 
 export default function ComparePolicyVersionsPage() {
@@ -16,65 +19,88 @@ export default function ComparePolicyVersionsPage() {
 
   const comparisonRows = [
     {
-      parameter: "Income limit",
-      valA: "₹2,00,000",
-      valB: "₹3,00,000",
+      parameter: "EWS Income Limit",
+      valA: "₹2,00,000 / year",
+      valB: "₹3,00,000 / year",
       diff: "increased",
+      impact: "Broadened eligibility to include higher wage earners",
+      gazette: "MoHUA Para 3.2"
     },
     {
-      parameter: "Age",
-      valA: "18+",
-      valB: "18+",
+      parameter: "Minimum Applicant Age",
+      valA: "18+ years",
+      valB: "18+ years",
       diff: "equal",
+      impact: "Unchanged statutory majority requirement",
+      gazette: "Operational Sec 2.1"
     },
     {
-      parameter: "Documents",
-      valA: "3",
-      valB: "4",
+      parameter: "Mandatory Documents",
+      valA: "3 standard proofs",
+      valB: "4 (e-KYC & Geotag added)",
       diff: "increased",
+      impact: "Strict biometric authentication to prevent fraud",
+      gazette: "Gazette Part II-Sec 3"
     },
     {
-      parameter: "Application deadline",
-      valA: "31 Mar",
-      valB: "30 Apr",
+      parameter: "Application Deadline",
+      valA: "31 March 2024",
+      valB: "30 April 2026",
       diff: "increased",
+      impact: "Extended window for municipal verification",
+      gazette: "CCEA Resolution"
     },
     {
-      parameter: "House ownership",
-      valA: "No pucca house",
-      valB: "No pucca house",
+      parameter: "Pucca House Ownership",
+      valA: "Zero owned anywhere",
+      valB: "Zero owned anywhere",
       diff: "equal",
+      impact: "Core housing deprivation limitation preserved",
+      gazette: "Rule 4.1"
     },
     {
-      parameter: "Beneficiary type",
-      valA: "EWS/LIG",
-      valB: "EWS/LIG/MIG",
+      parameter: "Beneficiary Coverage",
+      valA: "EWS / LIG only",
+      valB: "EWS / LIG + Special Focus",
       diff: "increased",
+      impact: "Inclusive expansion for single women & disabled",
+      gazette: "CLSS Guideline 9"
     },
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6 pb-12">
       {/* Page Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-          Compare Policy Versions
-        </h1>
-        <p className="text-sm text-gray-500 mt-0.5">
-          See what changed between different versions.
-        </p>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E5E9E6]">
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-[#123C35] bg-[#D8F3EA] px-2.5 py-0.5 rounded-full border border-[#B2E2CE]">
+              <GitCompare className="w-3 h-3 text-[#2F6B5F]" />
+              Policy Version Diff
+            </span>
+            <span className="text-xs text-[#71807B] font-medium hidden sm:inline">
+              Understand. Verify. Decide.
+            </span>
+          </div>
+          <h1 className="text-xl sm:text-2xl font-bold text-[#17211F] tracking-tight mt-1">
+            Compare Policy Versions
+          </h1>
+          <p className="text-xs sm:text-sm text-[#71807B] mt-0.5">
+            Inspect amendments, statutory relaxation, or tightened criteria between gazette editions.
+          </p>
+        </div>
       </div>
 
       {/* Selectors Bar */}
-      <div className="bg-white border border-[#E2E8E0] rounded-xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center gap-4">
+      <div className="bg-white border border-[#E5E9E6] rounded-2xl p-5 shadow-xs flex flex-col sm:flex-row sm:items-center gap-4">
         <div className="flex-1">
-          <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">
-            Base Version
+          <label className="block text-[11px] font-bold text-[#71807B] uppercase tracking-wider mb-1.5">
+            Base Version (Pre-amendment)
           </label>
           <select
             value={versionA}
             onChange={(e) => setVersionA(e.target.value)}
-            className="w-full bg-[#F5F7F5] border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-xs font-semibold text-gray-800 focus:outline-none focus:border-[#123C35] cursor-pointer"
+            className="w-full bg-[#FAFAF7] border border-[#E5E9E6] rounded-xl px-3.5 py-2 text-xs font-semibold text-[#17211F] focus:outline-none focus:border-[#2F6B5F] cursor-pointer"
           >
             <option value="v1.0 (2022)">Version 1.0 (2022)</option>
             <option value="v2.0 (2023)">Version 2.0 (2023)</option>
@@ -82,82 +108,98 @@ export default function ComparePolicyVersionsPage() {
           </select>
         </div>
 
-        <div className="text-center font-bold text-sm text-gray-400 px-2 pt-4 sm:pt-0">
-          vs
+        <div className="text-center font-bold text-xs text-[#71807B] px-2 pt-2 sm:pt-4">
+          VS
         </div>
 
         <div className="flex-1">
-          <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">
-            Target Version
+          <label className="block text-[11px] font-bold text-[#71807B] uppercase tracking-wider mb-1.5">
+            Target Version (Current Gazette)
           </label>
           <select
             value={versionB}
             onChange={(e) => setVersionB(e.target.value)}
-            className="w-full bg-[#F5F7F5] border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-xs font-semibold text-gray-800 focus:outline-none focus:border-[#123C35] cursor-pointer"
+            className="w-full bg-[#FAFAF7] border border-[#E5E9E6] rounded-xl px-3.5 py-2 text-xs font-semibold text-[#17211F] focus:outline-none focus:border-[#2F6B5F] cursor-pointer"
           >
-            <option value="v3.0 (2026)">Version 3.0 (2026)</option>
+            <option value="v3.0 (2026)">Version 3.0 (2026) · Active</option>
             <option value="v2.1 (2024)">Version 2.1 (2024)</option>
           </select>
         </div>
       </div>
 
-      {/* Comparison Table */}
-      <div className="bg-white border border-[#E2E8E0] rounded-xl shadow-sm overflow-hidden">
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="bg-[#F9FAF8] border-b border-[#E2E8E0] text-xs font-bold text-gray-600">
-              <th className="py-3 px-5">Parameter</th>
-              <th className="py-3 px-5">{versionA}</th>
-              <th className="py-3 px-5">{versionB}</th>
-              <th className="py-3 px-5 text-right">Change</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100 text-xs text-gray-800">
-            {comparisonRows.map((row, idx) => {
-              return (
-                <tr key={idx} className="hover:bg-[#F9FAF8] transition-colors">
-                  <td className="py-3.5 px-5 font-semibold text-gray-900">
-                    {row.parameter}
-                  </td>
-                  <td className="py-3.5 px-5 text-gray-600">{row.valA}</td>
-                  <td className="py-3.5 px-5 font-medium text-gray-900">{row.valB}</td>
-                  <td className="py-3.5 px-5 text-right">
-                    {row.diff === "increased" && (
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-50 text-emerald-600">
-                        <ArrowUp className="w-4 h-4 font-bold stroke-[3]" />
-                      </span>
-                    )}
-                    {row.diff === "decreased" && (
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-50 text-red-600">
-                        <ArrowDown className="w-4 h-4 font-bold stroke-[3]" />
-                      </span>
-                    )}
-                    {row.diff === "equal" && (
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-500">
-                        <Equal className="w-4 h-4" />
-                      </span>
-                    )}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      {/* Comparison Table with overflow protection */}
+      <div className="bg-white border border-[#E5E9E6] rounded-2xl shadow-xs overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse min-w-[580px]">
+            <thead>
+              <tr className="bg-[#FAFAF7] border-b border-[#E5E9E6] text-xs font-bold text-[#17211F]">
+                <th className="py-3.5 px-5">Statutory Parameter</th>
+                <th className="py-3.5 px-5 text-[#71807B]">{versionA}</th>
+                <th className="py-3.5 px-5 text-[#123C35]">{versionB}</th>
+                <th className="py-3.5 px-5">Substantive Impact</th>
+                <th className="py-3.5 px-5 text-right">Status</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#E5E9E6] text-xs text-[#17211F]">
+              {comparisonRows.map((row, idx) => {
+                return (
+                  <tr key={idx} className="hover:bg-[#FAFAF7] transition-colors">
+                    <td className="py-3.5 px-5 font-semibold text-[#17211F]">
+                      <div>{row.parameter}</div>
+                      <div className="text-[10px] font-mono text-[#71807B]">{row.gazette}</div>
+                    </td>
+                    <td className="py-3.5 px-5 text-[#71807B]">{row.valA}</td>
+                    <td className="py-3.5 px-5 font-bold text-[#123C35]">{row.valB}</td>
+                    <td className="py-3.5 px-5 text-[#71807B] max-w-xs text-[11px] leading-relaxed">
+                      {row.impact}
+                    </td>
+                    <td className="py-3.5 px-5 text-right">
+                      {row.diff === "increased" && (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#EBF7F2] text-[#16805A] text-[10px] font-bold border border-[#16805A]/20">
+                          <ArrowUp className="w-3 h-3 font-bold" />
+                          Relaxed / Expanded
+                        </span>
+                      )}
+                      {row.diff === "decreased" && (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#FDF0F0] text-[#C94A4A] text-[10px] font-bold border border-[#C94A4A]/20">
+                          <ArrowDown className="w-3 h-3 font-bold" />
+                          Tightened
+                        </span>
+                      )}
+                      {row.diff === "equal" && (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#FAFAF7] text-[#71807B] text-[10px] font-bold border border-[#E5E9E6]">
+                          <Equal className="w-3 h-3" />
+                          Unchanged
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      {/* Legend at Bottom */}
-      <div className="flex items-center gap-6 text-xs text-gray-500 justify-start px-2">
-        <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />
-          <span>Increased</span>
+      {/* Legend & Summary Note */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-[#71807B] px-1">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#16805A] inline-block" />
+            <span>Relaxed criteria</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#C94A4A] inline-block" />
+            <span>Tightened rules</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#E5E9E6] inline-block" />
+            <span>Identical</span>
+          </div>
         </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" />
-          <span>Decreased</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-gray-300 inline-block" />
-          <span>No change</span>
+
+        <div className="text-[11px] text-[#71807B]">
+          Source: Gazette Bi-Temporal Reconciliation Engine v2.4
         </div>
       </div>
     </div>

@@ -121,8 +121,8 @@ export default function ExploreSchemesPage() {
       field: "Education & Scholarships",
       tags: ["College Students", "Income < ₹5L", "Higher Education"],
       icon: GraduationCap,
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-700",
+      iconBg: "bg-[#EBF7F2]",
+      iconColor: "text-[#16805A]",
       status: "Active",
       officialPortal: "https://scholarships.gov.in",
       criteria: {
@@ -143,8 +143,8 @@ export default function ExploreSchemesPage() {
       field: "Education & Scholarships",
       tags: ["Merit-cum-Means", "Students", "Income ≤ ₹4.5L"],
       icon: GraduationCap,
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-700",
+      iconBg: "bg-[#EBF7F2]",
+      iconColor: "text-[#16805A]",
       status: "Active",
       officialPortal: "https://scholarships.gov.in",
       criteria: {
@@ -165,8 +165,8 @@ export default function ExploreSchemesPage() {
       field: "Education & Scholarships",
       tags: ["Post-Matric", "Students", "BPL Priority"],
       icon: GraduationCap,
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-700",
+      iconBg: "bg-[#EBF7F2]",
+      iconColor: "text-[#16805A]",
       status: "Active",
       officialPortal: "https://scholarships.gov.in",
       criteria: {
@@ -187,8 +187,8 @@ export default function ExploreSchemesPage() {
       field: "Education & Scholarships",
       tags: ["Secondary School", "Class 9-12", "Income ≤ ₹3.5L"],
       icon: GraduationCap,
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-700",
+      iconBg: "bg-[#EBF7F2]",
+      iconColor: "text-[#16805A]",
       status: "Active",
       officialPortal: "https://scholarships.gov.in",
       criteria: {
@@ -211,8 +211,8 @@ export default function ExploreSchemesPage() {
       field: "Housing & Urban",
       tags: ["EWS / LIG", "No Pucca House", "Urban Areas"],
       icon: Building2,
-      iconBg: "bg-amber-50",
-      iconColor: "text-amber-700",
+      iconBg: "bg-[#FEF3DC]",
+      iconColor: "text-[#C47F0C]",
       status: "Active",
       officialPortal: "https://pmay-urban.gov.in",
       criteria: {
@@ -232,8 +232,8 @@ export default function ExploreSchemesPage() {
       field: "Housing & Urban",
       tags: ["Home Loan", "First-time Buyer", "EWS / LIG"],
       icon: Building2,
-      iconBg: "bg-amber-50",
-      iconColor: "text-amber-700",
+      iconBg: "bg-[#FEF3DC]",
+      iconColor: "text-[#C47F0C]",
       status: "Active",
       officialPortal: "https://pmaymis.gov.in",
       criteria: {
@@ -253,8 +253,8 @@ export default function ExploreSchemesPage() {
       field: "Housing & Urban",
       tags: ["State Scheme", "Jharkhand Domicile", "Kutcha House"],
       icon: Building2,
-      iconBg: "bg-amber-50",
-      iconColor: "text-amber-700",
+      iconBg: "bg-[#FEF3DC]",
+      iconColor: "text-[#C47F0C]",
       status: "Active",
       officialPortal: "https://aay.jharkhand.gov.in",
       criteria: {
@@ -275,7 +275,7 @@ export default function ExploreSchemesPage() {
       field: "Health & Medical",
       tags: ["BPL / SECC", "Secondary & Tertiary", "Cashless"],
       icon: HeartPulse,
-      iconBg: "bg-emerald-50",
+      iconBg: "bg-[#EBF7F2]",
       iconColor: "text-[#123C35]",
       status: "Active",
       officialPortal: "https://pmjay.gov.in",
@@ -295,7 +295,7 @@ export default function ExploreSchemesPage() {
       field: "Health & Medical",
       tags: ["Free Treatment", "BPL Patients", "All District Hospitals"],
       icon: HeartPulse,
-      iconBg: "bg-emerald-50",
+      iconBg: "bg-[#EBF7F2]",
       iconColor: "text-[#123C35]",
       status: "Active",
       officialPortal: "https://nhm.gov.in",
@@ -315,7 +315,7 @@ export default function ExploreSchemesPage() {
       field: "Health & Medical",
       tags: ["Central Employees", "Pensioners Only", "Government Service"],
       icon: HeartPulse,
-      iconBg: "bg-emerald-50",
+      iconBg: "bg-[#EBF7F2]",
       iconColor: "text-[#123C35]",
       status: "Active",
       officialPortal: "https://cghs.nic.in",
@@ -337,8 +337,8 @@ export default function ExploreSchemesPage() {
       field: "Agriculture & Farmers",
       tags: ["Small Farmers", "DBT Transfer", "Landholders"],
       icon: Sprout,
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-700",
+      iconBg: "bg-[#EBF7F2]",
+      iconColor: "text-[#16805A]",
       status: "Active",
       officialPortal: "https://pmkisan.gov.in",
       criteria: {
@@ -357,8 +357,8 @@ export default function ExploreSchemesPage() {
       field: "Agriculture & Farmers",
       tags: ["Crop Insurance", "Cultivators", "Low Premium 1.5%-2%"],
       icon: Sprout,
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-700",
+      iconBg: "bg-[#EBF7F2]",
+      iconColor: "text-[#16805A]",
       status: "Active",
       officialPortal: "https://pmfby.gov.in",
       criteria: {
@@ -377,8 +377,8 @@ export default function ExploreSchemesPage() {
       field: "Agriculture & Farmers",
       tags: ["Agri Loan", "4% Interest", "Farmers & Animal Husbandry"],
       icon: Sprout,
-      iconBg: "bg-emerald-50",
-      iconColor: "text-emerald-700",
+      iconBg: "bg-[#EBF7F2]",
+      iconColor: "text-[#16805A]",
       status: "Active",
       officialPortal: "https://myscheme.gov.in",
       criteria: {
@@ -482,8 +482,8 @@ export default function ExploreSchemesPage() {
       field: "Women & Child",
       tags: ["Girl Child < 10 yrs", "High Interest 8.2%", "Tax-Free"],
       icon: Users,
-      iconBg: "bg-rose-50",
-      iconColor: "text-rose-700",
+      iconBg: "bg-[#FDF0F0]",
+      iconColor: "text-[#C94A4A]",
       status: "Active",
       officialPortal: "https://myscheme.gov.in",
       criteria: {
@@ -502,8 +502,8 @@ export default function ExploreSchemesPage() {
       field: "Women & Child",
       tags: ["Pregnant Women", "Lactating Mothers", "Maternity Benefit"],
       icon: Users,
-      iconBg: "bg-rose-50",
-      iconColor: "text-rose-700",
+      iconBg: "bg-[#FDF0F0]",
+      iconColor: "text-[#C94A4A]",
       status: "Active",
       officialPortal: "https://pmmvy.wcd.gov.in",
       criteria: {
@@ -776,10 +776,10 @@ export default function ExploreSchemesPage() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+          <h1 className="text-2xl font-bold text-[#17211F] tracking-tight">
             Explore Schemes
           </h1>
-          <p className="text-sm text-gray-500 mt-0.5">
+          <p className="text-sm text-[#71807B] mt-0.5">
             Browse and discover government schemes across all fields with live eligibility checking.
           </p>
         </div>
@@ -788,43 +788,43 @@ export default function ExploreSchemesPage() {
         <button
           type="button"
           onClick={() => setIsProfileModalOpen(true)}
-          className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white border border-[#CFD9CE] hover:border-[#123C35] hover:shadow-sm transition-all text-left group shrink-0"
+          className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white border border-[#E5E9E6] hover:border-[#123C35] hover:shadow-sm transition-all text-left group shrink-0"
           title="Click to adjust your profile parameters"
         >
           <div className="w-8 h-8 rounded-full bg-[#123C35] text-white font-bold flex items-center justify-center text-xs shadow-sm">
             {profile.name[0]}
           </div>
           <div>
-            <div className="text-xs font-bold text-gray-900 group-hover:text-[#123C35] flex items-center gap-1.5">
+            <div className="text-xs font-bold text-[#17211F] group-hover:text-[#123C35] flex items-center gap-1.5">
               <span>{profile.name}</span>
-              <span className="text-[10px] text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">
+              <span className="text-[10px] text-[#16805A] bg-[#EBF7F2] px-1.5 py-0.2 rounded border border-[#B2E2CE]">
                 {profile.occupation}
               </span>
             </div>
-            <div className="text-[11px] text-gray-500">
+            <div className="text-[11px] text-[#71807B]">
               Age {profile.age} • ₹{(profile.annualIncome / 100000).toFixed(1)}L/yr • {profile.state}
             </div>
           </div>
-          <SlidersHorizontal className="w-4 h-4 text-gray-400 group-hover:text-[#123C35] ml-1" />
+          <SlidersHorizontal className="w-4 h-4 text-[#71807B] group-hover:text-[#123C35] ml-1" />
         </button>
       </div>
 
       {/* Citizen Profile Status Summary Card */}
-      <div className="bg-[#F4FAF6] border border-[#CFE5D8] rounded-xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-[#FAFAF7] border border-[#B2E2CE] rounded-xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[#E2F2EB] text-[#123C35] flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-[#D8F3EA] text-[#123C35] flex items-center justify-center shrink-0">
             <UserCheck className="w-5 h-5 text-[#2F6B5F]" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-gray-900">
+              <span className="text-xs font-bold text-[#17211F]">
                 Active Profile: {profile.name} ({profile.occupation})
               </span>
-              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">
+              <span className="text-[11px] font-semibold text-[#16805A] bg-[#D8F3EA] px-2 py-0.5 rounded-full border border-[#B2E2CE]">
                 {totalEligibleCount} Schemes Eligible
               </span>
             </div>
-            <div className="text-xs text-gray-600 mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+            <div className="text-xs text-[#71807B] mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1">
               <span><strong>State:</strong> {profile.state}</span>
               <span>•</span>
               <span><strong>Income:</strong> ₹{profile.annualIncome.toLocaleString()}/yr</span>
@@ -843,7 +843,7 @@ export default function ExploreSchemesPage() {
             className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
               eligibilityFilter === "eligible"
                 ? "bg-[#123C35] text-white shadow-sm"
-                : "bg-white border border-[#CFD9CE] text-[#123C35] hover:bg-emerald-50"
+                : "bg-white border border-[#E5E9E6] text-[#123C35] hover:bg-[#EBF7F2]"
             }`}
           >
             <Sparkles className="w-3.5 h-3.5" />
@@ -852,7 +852,7 @@ export default function ExploreSchemesPage() {
           <button
             type="button"
             onClick={() => setIsProfileModalOpen(true)}
-            className="text-xs text-gray-600 hover:text-gray-900 font-semibold underline px-2"
+            className="text-xs text-[#71807B] hover:text-[#17211F] font-semibold underline px-2"
           >
             Edit Profile
           </button>
@@ -863,26 +863,26 @@ export default function ExploreSchemesPage() {
       <div className="space-y-3">
         <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
           <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#71807B]" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search by scheme name, ministry, target beneficiary, or keywords..."
-              className="w-full bg-white border border-[#CFD9CE] rounded-xl pl-10 pr-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10"
+              className="w-full bg-white border border-[#E5E9E6] rounded-xl pl-10 pr-4 py-2.5 text-sm text-[#17211F] placeholder-gray-400 focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10"
             />
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5 shrink-0">
             {/* Sort Order Dropdown */}
-            <div className="flex items-center gap-2 bg-white border border-[#CFD9CE] rounded-xl px-3 py-2 text-xs text-gray-700 shadow-2xs">
+            <div className="flex items-center gap-2 bg-white border border-[#E5E9E6] rounded-xl px-3 py-2 text-xs text-[#17211F] shadow-2xs">
               <ArrowUpDown className="w-3.5 h-3.5 text-[#2F6B5F] shrink-0" />
-              <span className="font-semibold text-gray-500 hidden sm:inline">Sort:</span>
+              <span className="font-semibold text-[#71807B] hidden sm:inline">Sort:</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
                 aria-label="Sort schemes by"
-                className="bg-transparent font-semibold text-gray-800 focus:outline-none cursor-pointer pr-1"
+                className="bg-transparent font-semibold text-[#17211F] focus:outline-none cursor-pointer pr-1"
               >
                 <option value="recommended">Recommended (Eligible First)</option>
                 <option value="benefit-high">Benefit: High to Low</option>
@@ -892,14 +892,14 @@ export default function ExploreSchemesPage() {
             </div>
 
             {/* Eligibility Filter Select */}
-            <div className="flex items-center bg-white border border-[#CFD9CE] rounded-xl p-1 shrink-0">
+            <div className="flex items-center bg-white border border-[#E5E9E6] rounded-xl p-1 shrink-0">
             <button
               type="button"
               onClick={() => setEligibilityFilter("all")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 eligibilityFilter === "all"
                   ? "bg-[#123C35] text-white shadow-sm"
-                  : "text-gray-600 hover:text-gray-900"
+                  : "text-[#71807B] hover:text-[#17211F]"
               }`}
             >
               All Status
@@ -909,8 +909,8 @@ export default function ExploreSchemesPage() {
               onClick={() => setEligibilityFilter("eligible")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 ${
                 eligibilityFilter === "eligible"
-                  ? "bg-emerald-700 text-white shadow-sm"
-                  : "text-emerald-700 hover:bg-emerald-50"
+                  ? "bg-[#16805A] text-white shadow-sm"
+                  : "text-[#16805A] hover:bg-[#EBF7F2]"
               }`}
             >
               <CheckCircle2 className="w-3 h-3" />
@@ -921,8 +921,8 @@ export default function ExploreSchemesPage() {
               onClick={() => setEligibilityFilter("ineligible")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 ${
                 eligibilityFilter === "ineligible"
-                  ? "bg-rose-700 text-white shadow-sm"
-                  : "text-rose-700 hover:bg-rose-50"
+                  ? "bg-[#C94A4A] text-white shadow-sm"
+                  : "text-[#C94A4A] hover:bg-[#FDF0F0]"
               }`}
             >
               <XCircle className="w-3 h-3" />
@@ -954,7 +954,7 @@ export default function ExploreSchemesPage() {
                 className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${
                   isActive
                     ? "bg-[#123C35] text-white shadow-sm"
-                    : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300"
+                    : "bg-white border border-gray-200 text-[#71807B] hover:bg-gray-50 hover:border-gray-300"
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -963,7 +963,7 @@ export default function ExploreSchemesPage() {
                   className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
                     isActive
                       ? "bg-white/20 text-white"
-                      : "bg-gray-100 text-gray-500"
+                      : "bg-gray-100 text-[#71807B]"
                   }`}
                 >
                   {countInField}
@@ -976,22 +976,22 @@ export default function ExploreSchemesPage() {
       </div>
 
       {/* Schemes Results Counter */}
-      <div className="flex items-center justify-between text-xs text-gray-500 px-1">
+      <div className="flex items-center justify-between text-xs text-[#71807B] px-1">
         <div>
           Showing <strong>{filteredSchemes.length}</strong> scheme{filteredSchemes.length === 1 ? "" : "s"} in{" "}
-          <span className="font-semibold text-gray-800">{selectedField}</span>
+          <span className="font-semibold text-[#17211F]">{selectedField}</span>
           {eligibilityFilter !== "all" && (
             <span> • Filtered by <strong>{eligibilityFilter}</strong></span>
           )}
         </div>
         {filteredSchemes.length > 0 && (
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1 text-emerald-700 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            <span className="flex items-center gap-1 text-[#16805A] font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#EBF7F2]0" />
               Eligible
             </span>
-            <span className="flex items-center gap-1 text-rose-700 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-rose-500" />
+            <span className="flex items-center gap-1 text-[#C94A4A] font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#FDF0F0]0" />
               Ineligible
             </span>
           </div>
@@ -1001,12 +1001,12 @@ export default function ExploreSchemesPage() {
       {/* Schemes List */}
       <div className="space-y-4">
         {filteredSchemes.length === 0 ? (
-          <div className="bg-white border border-[#E2E8E0] rounded-2xl p-12 text-center space-y-3 shadow-sm">
-            <div className="w-12 h-12 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center mx-auto">
+          <div className="bg-white border border-[#E5E9E6] rounded-2xl p-12 text-center space-y-3 shadow-sm">
+            <div className="w-12 h-12 rounded-full bg-gray-100 text-[#71807B] flex items-center justify-center mx-auto">
               <Filter className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-gray-900 text-base">No schemes found</h3>
-            <p className="text-xs text-gray-500 max-w-sm mx-auto">
+            <h3 className="font-bold text-[#17211F] text-base">No schemes found</h3>
+            <p className="text-xs text-[#71807B] max-w-sm mx-auto">
               No government schemes match the selected filters for your current profile.
             </p>
             <div className="flex justify-center gap-3 pt-2">
@@ -1034,7 +1034,7 @@ export default function ExploreSchemesPage() {
                 key={scheme.id}
                 className={`bg-white border rounded-xl p-5 shadow-sm transition-all ${
                   isEligible
-                    ? "border-emerald-200 hover:border-emerald-300 hover:shadow-md"
+                    ? "border-[#B2E2CE] hover:border-emerald-300 hover:shadow-md"
                     : "border-gray-200 hover:border-gray-300"
                 }`}
               >
@@ -1052,35 +1052,35 @@ export default function ExploreSchemesPage() {
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-1">
                           <div className="flex items-center gap-2 min-w-0">
-                            <span className="text-[10px] uppercase tracking-wider font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded shrink-0">
+                            <span className="text-[10px] uppercase tracking-wider font-bold text-[#71807B] bg-gray-100 px-2 py-0.5 rounded shrink-0">
                               {scheme.field}
                             </span>
-                            <span className="text-xs text-gray-400 shrink-0">•</span>
-                            <span className="text-xs text-gray-500 truncate">{scheme.ministry}</span>
+                            <span className="text-xs text-[#71807B] shrink-0">•</span>
+                            <span className="text-xs text-[#71807B] truncate">{scheme.ministry}</span>
                           </div>
                           <a
                             href={scheme.officialPortal}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#123C35] hover:text-[#0A2621] bg-[#F4FAF6] hover:bg-emerald-100 border border-[#CFE5D8] px-2 py-0.5 rounded-md transition-colors shrink-0 shadow-2xs group"
+                            className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#123C35] hover:text-[#0A2621] bg-[#FAFAF7] hover:bg-[#D8F3EA] border border-[#B2E2CE] px-2 py-0.5 rounded-md transition-colors shrink-0 shadow-2xs group"
                             title={`Open official portal for ${scheme.name}`}
                           >
                             <span>Apply / Portal</span>
                             <ExternalLink className="w-3 h-3 text-[#2F6B5F] group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         </div>
-                        <h2 className="font-bold text-base text-gray-900 leading-snug">
+                        <h2 className="font-bold text-base text-[#17211F] leading-snug">
                           {scheme.name}
                         </h2>
                       </div>
 
                       {/* Benefit */}
-                      <div className="inline-block font-bold text-xs text-[#123C35] bg-[#F4FAF6] border border-[#CFE5D8] px-2.5 py-1 rounded-lg">
+                      <div className="inline-block font-bold text-xs text-[#123C35] bg-[#FAFAF7] border border-[#B2E2CE] px-2.5 py-1 rounded-lg">
                         {scheme.benefit}
                       </div>
 
                       {/* Scheme Summary */}
-                      <p className="text-xs text-gray-600 leading-relaxed max-w-3xl">
+                      <p className="text-xs text-[#71807B] leading-relaxed max-w-3xl">
                         {scheme.summary}
                       </p>
 
@@ -1089,7 +1089,7 @@ export default function ExploreSchemesPage() {
                         {scheme.tags.map((tag, tIdx) => (
                           <span
                             key={tIdx}
-                            className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#F5F7F5] border border-[#E2E8E0] text-gray-600 font-medium"
+                            className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#F5F7F5] border border-[#E5E9E6] text-[#71807B] font-medium"
                           >
                             {tag}
                           </span>
@@ -1099,28 +1099,28 @@ export default function ExploreSchemesPage() {
                       {/* Key Eligibility Criteria Fields Grid */}
                       <div className="pt-2 border-t border-gray-100 grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
                         <div className="bg-gray-50 border border-gray-100 rounded-lg p-2">
-                          <span className="text-gray-400 block font-medium">Income Ceiling</span>
-                          <span className="font-bold text-gray-800">
+                          <span className="text-[#71807B] block font-medium">Income Ceiling</span>
+                          <span className="font-bold text-[#17211F]">
                             {scheme.criteria.maxIncome ? `≤ ₹${(scheme.criteria.maxIncome / 100000).toFixed(1)} Lakh/yr` : "No limit"}
                           </span>
                         </div>
                         <div className="bg-gray-50 border border-gray-100 rounded-lg p-2">
-                          <span className="text-gray-400 block font-medium">Age Eligibility</span>
-                          <span className="font-bold text-gray-800">
+                          <span className="text-[#71807B] block font-medium">Age Eligibility</span>
+                          <span className="font-bold text-[#17211F]">
                             {scheme.criteria.minAge || scheme.criteria.maxAge
                               ? `${scheme.criteria.minAge || 0} - ${scheme.criteria.maxAge || "No limit"} yrs`
                               : "All ages"}
                           </span>
                         </div>
                         <div className="bg-gray-50 border border-gray-100 rounded-lg p-2">
-                          <span className="text-gray-400 block font-medium">Target Group</span>
-                          <span className="font-bold text-gray-800 truncate block">
+                          <span className="text-[#71807B] block font-medium">Target Group</span>
+                          <span className="font-bold text-[#17211F] truncate block">
                             {scheme.criteria.allowedOccupations ? scheme.criteria.allowedOccupations.join(", ") : "All Citizens"}
                           </span>
                         </div>
                         <div className="bg-gray-50 border border-gray-100 rounded-lg p-2">
-                          <span className="text-gray-400 block font-medium">Jurisdiction</span>
-                          <span className="font-bold text-gray-800">
+                          <span className="text-[#71807B] block font-medium">Jurisdiction</span>
+                          <span className="font-bold text-[#17211F]">
                             {scheme.criteria.stateRestriction || "All India"}
                           </span>
                         </div>
@@ -1133,13 +1133,13 @@ export default function ExploreSchemesPage() {
                     {/* Live Eligibility Badge */}
                     <div>
                       {isEligible ? (
-                        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full shadow-sm">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#16805A] bg-[#D8F3EA] border border-emerald-300 px-3 py-1 rounded-full shadow-sm">
+                          <CheckCircle2 className="w-4 h-4 text-[#16805A]" />
                           <span>Eligible for {profile.name}</span>
                         </div>
                       ) : (
-                        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-rose-800 bg-rose-100 border border-rose-300 px-3 py-1 rounded-full shadow-sm">
-                          <XCircle className="w-4 h-4 text-rose-700" />
+                        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#C94A4A] bg-rose-100 border border-rose-300 px-3 py-1 rounded-full shadow-sm">
+                          <XCircle className="w-4 h-4 text-[#C94A4A]" />
                           <span>Not Eligible</span>
                         </div>
                       )}
@@ -1148,11 +1148,11 @@ export default function ExploreSchemesPage() {
                     {/* Eligibility Reason Summary Snippet */}
                     <div className="text-[11px] text-left lg:text-right">
                       {isEligible ? (
-                        <p className="text-emerald-700 font-medium">
+                        <p className="text-[#16805A] font-medium">
                           ✔ Satisfies {satisfiedReasons.length} criteria for {profile.occupation}
                         </p>
                       ) : (
-                        <p className="text-rose-700 font-medium">
+                        <p className="text-[#C94A4A] font-medium">
                           ✖ {disqualifiedReasons[0] || "Disqualified by policy rule"}
                         </p>
                       )}
@@ -1171,7 +1171,7 @@ export default function ExploreSchemesPage() {
                       <button
                         type="button"
                         onClick={() => setExpandedSchemeId(isExpanded ? null : scheme.id)}
-                        className="px-3 py-1.5 rounded-lg border border-gray-300 hover:bg-gray-50 text-gray-700 text-xs font-medium flex items-center justify-center gap-1 transition-colors"
+                        className="px-3 py-1.5 rounded-lg border border-gray-300 hover:bg-gray-50 text-[#17211F] text-xs font-medium flex items-center justify-center gap-1 transition-colors"
                       >
                         <span>{isExpanded ? "Hide Criteria Details" : "View Rules & Documents"}</span>
                         {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -1185,19 +1185,19 @@ export default function ExploreSchemesPage() {
                   <div className="mt-4 pt-4 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-up">
                     {/* Evaluated Conditions for User */}
                     <div className="bg-[#F8FAF8] border border-[#CFDFD5] rounded-xl p-3.5 space-y-2">
-                      <h4 className="text-xs font-bold text-gray-900 flex items-center gap-1.5">
+                      <h4 className="text-xs font-bold text-[#17211F] flex items-center gap-1.5">
                         <UserCheck className="w-4 h-4 text-[#2F6B5F]" />
                         <span>Rule Matching for {profile.name}:</span>
                       </h4>
                       <div className="space-y-1.5 text-xs">
                         {satisfiedReasons.map((reason, i) => (
-                          <div key={i} className="flex items-start gap-2 text-emerald-800">
+                          <div key={i} className="flex items-start gap-2 text-[#16805A]">
                             <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-600 mt-0.5" />
                             <span>{reason}</span>
                           </div>
                         ))}
                         {disqualifiedReasons.map((reason, i) => (
-                          <div key={i} className="flex items-start gap-2 text-rose-800">
+                          <div key={i} className="flex items-start gap-2 text-[#C94A4A]">
                             <XCircle className="w-3.5 h-3.5 shrink-0 text-rose-600 mt-0.5" />
                             <span>{reason}</span>
                           </div>
@@ -1208,8 +1208,8 @@ export default function ExploreSchemesPage() {
                     {/* Required Statutory Documents */}
                     <div className="bg-gray-50 border border-gray-200 rounded-xl p-3.5 space-y-2">
                       <div className="flex items-center justify-between">
-                        <h4 className="text-xs font-bold text-gray-900 flex items-center gap-1.5">
-                          <FileText className="w-4 h-4 text-gray-600" />
+                        <h4 className="text-xs font-bold text-[#17211F] flex items-center gap-1.5">
+                          <FileText className="w-4 h-4 text-[#71807B]" />
                           <span>Mandatory Documents ({scheme.documents.length}):</span>
                         </h4>
                         <a
@@ -1222,7 +1222,7 @@ export default function ExploreSchemesPage() {
                           <ExternalLink className="w-3 h-3" />
                         </a>
                       </div>
-                      <ul className="space-y-1 text-xs text-gray-700">
+                      <ul className="space-y-1 text-xs text-[#17211F]">
                         {scheme.documents.map((doc, dIdx) => (
                           <li key={dIdx} className="flex items-center gap-1.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#123C35]" />
@@ -1245,13 +1245,13 @@ export default function ExploreSchemesPage() {
           <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-xl border border-gray-200 space-y-5 animate-fade-up">
             <div className="flex items-center justify-between border-b pb-3">
               <div>
-                <h3 className="font-bold text-gray-900 text-base">Adjust Citizen Profile</h3>
-                <p className="text-xs text-gray-500">Change parameters to test eligibility across all schemes instantly</p>
+                <h3 className="font-bold text-[#17211F] text-base">Adjust Citizen Profile</h3>
+                <p className="text-xs text-[#71807B]">Change parameters to test eligibility across all schemes instantly</p>
               </div>
               <button
                 type="button"
                 onClick={() => setIsProfileModalOpen(false)}
-                className="w-8 h-8 rounded-lg hover:bg-gray-100 flex items-center justify-center text-gray-500 font-bold"
+                className="w-8 h-8 rounded-lg hover:bg-gray-100 flex items-center justify-center text-[#71807B] font-bold"
               >
                 ✕
               </button>
@@ -1259,21 +1259,21 @@ export default function ExploreSchemesPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Full Name</label>
+                <label className="block font-semibold text-[#17211F] mb-1">Full Name</label>
                 <input
                   type="text"
                   value={profile.name}
                   onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[#17211F]"
                 />
               </div>
 
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Occupation</label>
+                <label className="block font-semibold text-[#17211F] mb-1">Occupation</label>
                 <select
                   value={profile.occupation}
                   onChange={(e) => setProfile({ ...profile, occupation: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 cursor-pointer"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[#17211F] cursor-pointer"
                 >
                   <option value="Student">Student</option>
                   <option value="Farmer">Farmer / Cultivator</option>
@@ -1287,21 +1287,21 @@ export default function ExploreSchemesPage() {
               </div>
 
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Age (Years)</label>
+                <label className="block font-semibold text-[#17211F] mb-1">Age (Years)</label>
                 <input
                   type="number"
                   value={profile.age}
                   onChange={(e) => setProfile({ ...profile, age: Number(e.target.value) || 18 })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[#17211F]"
                 />
               </div>
 
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">State Domicile</label>
+                <label className="block font-semibold text-[#17211F] mb-1">State Domicile</label>
                 <select
                   value={profile.state}
                   onChange={(e) => setProfile({ ...profile, state: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 cursor-pointer"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[#17211F] cursor-pointer"
                 >
                   <option value="Telangana">Telangana</option>
                   <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -1315,21 +1315,21 @@ export default function ExploreSchemesPage() {
               </div>
 
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Annual Income (₹)</label>
+                <label className="block font-semibold text-[#17211F] mb-1">Annual Income (₹)</label>
                 <input
                   type="number"
                   value={profile.annualIncome}
                   onChange={(e) => setProfile({ ...profile, annualIncome: Number(e.target.value) || 0 })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[#17211F]"
                 />
               </div>
 
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Ration Card</label>
+                <label className="block font-semibold text-[#17211F] mb-1">Ration Card</label>
                 <select
                   value={profile.rationCard}
                   onChange={(e) => setProfile({ ...profile, rationCard: e.target.value as any })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 cursor-pointer"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[#17211F] cursor-pointer"
                 >
                   <option value="BPL / White">BPL / White Card (Priority)</option>
                   <option value="AAY">Antyodaya Anna Yojana (AAY)</option>
@@ -1338,11 +1338,11 @@ export default function ExploreSchemesPage() {
               </div>
 
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Owns a Pucca House?</label>
+                <label className="block font-semibold text-[#17211F] mb-1">Owns a Pucca House?</label>
                 <select
                   value={profile.puccaHouse ? "Yes" : "No"}
                   onChange={(e) => setProfile({ ...profile, puccaHouse: e.target.value === "Yes" })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 cursor-pointer"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[#17211F] cursor-pointer"
                 >
                   <option value="No">No (Living in rent / kutcha dwelling)</option>
                   <option value="Yes">Yes (Owns concrete pucca house)</option>
@@ -1350,11 +1350,11 @@ export default function ExploreSchemesPage() {
               </div>
 
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Social Category</label>
+                <label className="block font-semibold text-[#17211F] mb-1">Social Category</label>
                 <select
                   value={profile.socialCategory}
                   onChange={(e) => setProfile({ ...profile, socialCategory: e.target.value as any })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 cursor-pointer"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[#17211F] cursor-pointer"
                 >
                   <option value="General">General</option>
                   <option value="EWS">EWS</option>
@@ -1382,7 +1382,7 @@ export default function ExploreSchemesPage() {
                     disability: false,
                   })
                 }
-                className="text-xs text-gray-500 hover:text-gray-800 font-semibold"
+                className="text-xs text-[#71807B] hover:text-[#17211F] font-semibold"
               >
                 Reset to StudyUser (Student)
               </button>

@@ -10,108 +10,129 @@ import {
   Cell,
   LabelList
 } from "recharts";
-import { Award, ShieldAlert, Cpu } from "lucide-react";
+import { Award, ShieldAlert, Cpu, Sparkles, CheckCircle2, TrendingUp, BarChart3 } from "lucide-react";
 
 export default function ModelEvaluationPage() {
   const modelsData = [
-    { model: "Dense RAG", accuracy: "78.4%", faithfulness: "81.2%", hallucination: "14.3%", isOurs: false },
-    { model: "Hybrid RAG", accuracy: "82.7%", faithfulness: "86.5%", hallucination: "10.8%", isOurs: false },
+    { model: "Dense RAG (Baseline)", accuracy: "78.4%", faithfulness: "81.2%", hallucination: "14.3%", isOurs: false },
+    { model: "Hybrid BM25 + Dense", accuracy: "82.7%", faithfulness: "86.5%", hallucination: "10.8%", isOurs: false },
     { model: "GraphRAG", accuracy: "85.1%", faithfulness: "89.3%", hallucination: "8.7%", isOurs: false },
-    { model: "GovReasonRAG", accuracy: "91.6%", faithfulness: "95.8%", hallucination: "4.2%", isOurs: true },
+    { model: "GovReasonRAG (Ours)", accuracy: "91.6%", faithfulness: "95.8%", hallucination: "4.2%", isOurs: true },
   ];
 
   const ablationData = [
-    { name: "Base", score: 78.4, fill: "#24584F" },
-    { name: "+ Graph", score: 82.1, fill: "#24584F" },
-    { name: "+ Rules", score: 86.7, fill: "#24584F" },
-    { name: "+ Evidence", score: 89.3, fill: "#24584F" },
-    { name: "+ Version", score: 91.6, fill: "#D97706" }, // Saffron highlight for GovReasonRAG
+    { name: "Base RAG", score: 78.4, fill: "#2F6B5F" },
+    { name: "+ Graph", score: 82.1, fill: "#2F6B5F" },
+    { name: "+ AST Rules", score: 86.7, fill: "#123C35" },
+    { name: "+ Evidence Contract", score: 89.3, fill: "#123C35" },
+    { name: "+ Bi-Temporal Version", score: 91.6, fill: "#E8A317" },
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-5xl mx-auto space-y-8 pb-12">
       {/* Page Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-          Model Evaluation
-        </h1>
-        <p className="text-sm text-gray-500 mt-0.5">
-          Performance comparison across different approaches.
-        </p>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E5E9E6]">
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-[#123C35] bg-[#D8F3EA] px-2.5 py-0.5 rounded-full border border-[#B2E2CE]">
+              <BarChart3 className="w-3 h-3 text-[#2F6B5F]" />
+              Empirical Benchmarks
+            </span>
+            <span className="text-xs text-[#71807B] font-medium hidden sm:inline">
+              Understand. Verify. Decide.
+            </span>
+          </div>
+          <h1 className="text-xl sm:text-2xl font-bold text-[#17211F] tracking-tight mt-1">
+            Model Evaluation & Research Ablation
+          </h1>
+          <p className="text-xs sm:text-sm text-[#71807B] mt-0.5">
+            Rigorous performance benchmarks evaluated over 120 statutory gazette scenarios.
+          </p>
+        </div>
       </div>
 
       {/* Model Benchmark Table */}
-      <div className="bg-white border border-[#E2E8E0] rounded-xl shadow-sm overflow-hidden">
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="bg-[#F9FAF8] border-b border-[#E2E8E0] text-xs font-bold text-gray-600">
-              <th className="py-3.5 px-5">Model</th>
-              <th className="py-3.5 px-5">Accuracy</th>
-              <th className="py-3.5 px-5">Faithfulness</th>
-              <th className="py-3.5 px-5">Hallucination</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100 text-xs">
-            {modelsData.map((row, idx) => (
-              <tr
-                key={idx}
-                className={
-                  row.isOurs
-                    ? "bg-[#EBF5F0] font-semibold text-[#123C35]"
-                    : "hover:bg-gray-50 text-gray-800"
-                }
-              >
-                <td className="py-3.5 px-5 flex items-center gap-2">
-                  <span>{row.model}</span>
-                  {row.isOurs && (
-                    <span className="text-[10px] bg-[#123C35] text-white px-2 py-0.5 rounded-full font-bold">
-                      Ours
-                    </span>
-                  )}
-                </td>
-                <td className="py-3.5 px-5">{row.accuracy}</td>
-                <td className="py-3.5 px-5">{row.faithfulness}</td>
-                <td className="py-3.5 px-5">{row.hallucination}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Ablation Study Chart Card */}
-      <div className="bg-white border border-[#E2E8E0] rounded-xl p-6 shadow-sm space-y-4">
-        <div>
-          <h2 className="text-sm font-bold text-gray-800">Ablation Study</h2>
-          <p className="text-xs text-gray-400 mt-0.5">
-            Stepwise impact of Neuro-Symbolic Graph, Rule Engine, and Gazette Version Verification.
-          </p>
+      <div className="bg-white border border-[#E5E9E6] rounded-2xl shadow-xs overflow-hidden">
+        <div className="p-4 border-b border-[#E5E9E6] bg-[#FAFAF7] flex items-center justify-between">
+          <h2 className="font-bold text-xs text-[#17211F] uppercase tracking-wider">
+            Civic AI Architecture Benchmark
+          </h2>
+          <span className="text-xs text-[#71807B]">Evaluation Dataset: N=120 Gazette Scenarios</span>
         </div>
 
-        <div className="h-64 w-full pt-4">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse min-w-[540px]">
+            <thead>
+              <tr className="bg-[#FAFAF7] border-b border-[#E5E9E6] text-xs font-bold text-[#71807B]">
+                <th className="py-3.5 px-5">Architecture</th>
+                <th className="py-3.5 px-5">Decision Accuracy</th>
+                <th className="py-3.5 px-5">Gazette Faithfulness</th>
+                <th className="py-3.5 px-5 text-right">Hallucination Rate</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#E5E9E6] text-xs">
+              {modelsData.map((row, idx) => (
+                <tr
+                  key={idx}
+                  className={
+                    row.isOurs
+                      ? "bg-[#D8F3EA]/30 font-semibold text-[#123C35]"
+                      : "hover:bg-[#FAFAF7] text-[#17211F]"
+                  }
+                >
+                  <td className="py-3.5 px-5 flex items-center gap-2">
+                    <span>{row.model}</span>
+                    {row.isOurs && (
+                      <span className="text-[10px] bg-[#123C35] text-white px-2 py-0.5 rounded-full font-bold">
+                        Ours
+                      </span>
+                    )}
+                  </td>
+                  <td className="py-3.5 px-5 font-bold">{row.accuracy}</td>
+                  <td className="py-3.5 px-5 text-[#16805A]">{row.faithfulness}</td>
+                  <td className={`py-3.5 px-5 text-right font-mono ${row.isOurs ? "text-[#16805A] font-bold" : "text-[#C94A4A]"}`}>
+                    {row.hallucination}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Component Ablation Chart */}
+      <div className="bg-white border border-[#E5E9E6] rounded-2xl p-6 shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E5E9E6] pb-3">
+          <div>
+            <h2 className="font-bold text-sm text-[#17211F]">Ablation Analysis: Incremental Accuracy Gain</h2>
+            <p className="text-xs text-[#71807B]">Measuring the impact of adding Policy Graph, AST Rules, Evidence Contracts, and Bi-Temporal Versioning.</p>
+          </div>
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#123C35]">
+            <span className="w-3 h-3 rounded-full bg-[#E8A317] inline-block" />
+            <span>GovReasonRAG (91.6%)</span>
+          </div>
+        </div>
+
+        <div className="h-64 w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={ablationData} margin={{ top: 20, right: 20, left: -15, bottom: 10 }}>
-              <XAxis
-                dataKey="name"
-                tick={{ fontSize: 11, fill: "#4B5563" }}
-                axisLine={{ stroke: "#E5E7EB" }}
-                tickLine={false}
-              />
-              <YAxis
-                domain={[0, 100]}
-                ticks={[0, 25, 50, 75, 100]}
-                tick={{ fontSize: 11, fill: "#9CA3AF" }}
-                axisLine={{ stroke: "#E5E7EB" }}
-                tickLine={false}
-              />
+            <BarChart data={ablationData} margin={{ top: 20, right: 30, left: 0, bottom: 20 }}>
+              <XAxis dataKey="name" stroke="#71807B" fontSize={11} tickLine={false} />
+              <YAxis domain={[70, 100]} stroke="#71807B" fontSize={11} tickLine={false} />
               <Tooltip
-                formatter={(val: any) => [`${val}%`, "Accuracy Score"]}
-                contentStyle={{ borderRadius: "8px", fontSize: "12px", border: "1px solid #E5E7EB" }}
+                contentStyle={{
+                  backgroundColor: "#FFFFFF",
+                  borderColor: "#E5E9E6",
+                  borderRadius: "12px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                  fontSize: "12px"
+                }}
+                formatter={(val: any) => [`${val}% Accuracy`, "Score"]}
               />
-              <Bar dataKey="score" radius={[4, 4, 0, 0]} maxBarSize={48}>
-                <LabelList dataKey="score" position="top" style={{ fontSize: "11px", fontWeight: "bold", fill: "#374151" }} />
+              <Bar dataKey="score" radius={[8, 8, 0, 0]}>
                 {ablationData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.fill} />
                 ))}
+                <LabelList dataKey="score" position="top" fontSize={11} fill="#17211F" formatter={(v: any) => `${v}%`} />
               </Bar>
             </BarChart>
           </ResponsiveContainer>

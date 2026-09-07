@@ -81,10 +81,10 @@ export default function EligibilityWizardPage() {
     <div className="max-w-5xl mx-auto space-y-8">
       {/* Page Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+        <h1 className="text-2xl font-bold text-[#17211F] tracking-tight">
           Check Eligibility
         </h1>
-        <p className="text-sm text-gray-500 mt-0.5">
+        <p className="text-sm text-[#71807B] mt-0.5">
           Answer a few questions to check your eligibility for government schemes.
         </p>
       </div>
@@ -106,13 +106,13 @@ export default function EligibilityWizardPage() {
                     isActive
                       ? "bg-[#123C35] text-white ring-2 ring-[#123C35]/20"
                       : isDone
-                      ? "bg-emerald-600 text-white"
-                      : "bg-gray-100 text-gray-500"
+                      ? "bg-[#16805A] text-white"
+                      : "bg-gray-100 text-[#71807B]"
                   }`}
                 >
                   {isDone ? "✓" : s.num}
                 </div>
-                <span className={isActive ? "font-bold text-gray-900" : "text-gray-500"}>
+                <span className={isActive ? "font-bold text-[#17211F]" : "text-[#71807B]"}>
                   {s.label}
                 </span>
               </button>
@@ -127,12 +127,12 @@ export default function EligibilityWizardPage() {
       {/* Two Column Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column: Interactive Form Card (approx 65%) */}
-        <div className="lg:col-span-8 bg-white border border-[#E2E8E0] rounded-2xl p-6 shadow-sm space-y-6">
+        <div className="lg:col-span-8 bg-white border border-[#E5E9E6] rounded-2xl p-6 shadow-sm space-y-6">
           {step === 1 && (
             <div className="space-y-5 animate-fade-up">
               <div>
-                <h2 className="text-base font-bold text-gray-900">About You</h2>
-                <p className="text-xs text-gray-500 mt-0.5">
+                <h2 className="text-base font-bold text-[#17211F]">About You</h2>
+                <p className="text-xs text-[#71807B] mt-0.5">
                   Basic information to get started.
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function EligibilityWizardPage() {
               {/* Age & State Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-xs font-semibold text-[#17211F] mb-1.5">
                     Age
                   </label>
                   <input
@@ -148,18 +148,18 @@ export default function EligibilityWizardPage() {
                     value={formData.age}
                     onChange={(e) => setFormData({ ...formData, age: e.target.value })}
                     placeholder="21"
-                    className="w-full bg-white border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10"
+                    className="w-full bg-white border border-[#E5E9E6] rounded-lg px-3.5 py-2 text-sm text-[#17211F] focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-xs font-semibold text-[#17211F] mb-1.5">
                     State
                   </label>
                   <select
                     value={formData.state}
                     onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                    className="w-full bg-white border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10 cursor-pointer"
+                    className="w-full bg-white border border-[#E5E9E6] rounded-lg px-3.5 py-2 text-sm text-[#17211F] focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10 cursor-pointer"
                   >
                     <option value="Telangana">Telangana</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -175,7 +175,7 @@ export default function EligibilityWizardPage() {
 
               {/* Occupation */}
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                <label className="block text-xs font-semibold text-[#17211F] mb-1.5">
                   Occupation
                 </label>
                 <input
@@ -183,19 +183,19 @@ export default function EligibilityWizardPage() {
                   value={formData.occupation}
                   onChange={(e) => setFormData({ ...formData, occupation: e.target.value })}
                   placeholder="Student"
-                  className="w-full bg-white border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10"
+                  className="w-full bg-white border border-[#E5E9E6] rounded-lg px-3.5 py-2 text-sm text-[#17211F] focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10"
                 />
               </div>
 
               {/* Category (Optional) */}
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                <label className="block text-xs font-semibold text-[#17211F] mb-1.5">
                   Category (Optional)
                 </label>
                 <select
                   value={formData.category}
                   onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                  className="w-full bg-white border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10 cursor-pointer"
+                  className="w-full bg-white border border-[#E5E9E6] rounded-lg px-3.5 py-2 text-sm text-[#17211F] focus:outline-none focus:border-[#123C35] focus:ring-2 focus:ring-[#123C35]/10 cursor-pointer"
                 >
                   <option value="General">General</option>
                   <option value="EWS">EWS (Economically Weaker Section)</option>
@@ -210,14 +210,14 @@ export default function EligibilityWizardPage() {
           {step === 2 && (
             <div className="space-y-5 animate-fade-up">
               <div>
-                <h2 className="text-base font-bold text-gray-900">Financial Info</h2>
-                <p className="text-xs text-gray-500 mt-0.5">
+                <h2 className="text-base font-bold text-[#17211F]">Financial Info</h2>
+                <p className="text-xs text-[#71807B] mt-0.5">
                   Information on household income and economic classification.
                 </p>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                <label className="block text-xs font-semibold text-[#17211F] mb-1.5">
                   Annual Household Income (₹)
                 </label>
                 <input
@@ -225,21 +225,21 @@ export default function EligibilityWizardPage() {
                   value={formData.annualIncome}
                   onChange={(e) => setFormData({ ...formData, annualIncome: e.target.value })}
                   placeholder="240000"
-                  className="w-full bg-white border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#123C35]"
+                  className="w-full bg-white border border-[#E5E9E6] rounded-lg px-3.5 py-2 text-sm text-[#17211F] focus:outline-none focus:border-[#123C35]"
                 />
-                <span className="text-[11px] text-gray-500 mt-1 block">
+                <span className="text-[11px] text-[#71807B] mt-1 block">
                   Qualifies for EWS ceiling (≤ ₹3,00,000) under central guidelines.
                 </span>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                <label className="block text-xs font-semibold text-[#17211F] mb-1.5">
                   Ration Card Status
                 </label>
                 <select
                   value={formData.rationCard}
                   onChange={(e) => setFormData({ ...formData, rationCard: e.target.value })}
-                  className="w-full bg-white border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#123C35]"
+                  className="w-full bg-white border border-[#E5E9E6] rounded-lg px-3.5 py-2 text-sm text-[#17211F] focus:outline-none focus:border-[#123C35]"
                 >
                   <option value="White / BPL">White Card / BPL (Priority Household)</option>
                   <option value="Antyodaya (AAY)">Antyodaya Anna Yojana (AAY)</option>
@@ -252,21 +252,21 @@ export default function EligibilityWizardPage() {
           {step === 3 && (
             <div className="space-y-5 animate-fade-up">
               <div>
-                <h2 className="text-base font-bold text-gray-900">Additional Details</h2>
-                <p className="text-xs text-gray-500 mt-0.5">
+                <h2 className="text-base font-bold text-[#17211F]">Additional Details</h2>
+                <p className="text-xs text-[#71807B] mt-0.5">
                   Housing asset and residence details for statutory matching.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-xs font-semibold text-[#17211F] mb-1.5">
                     Do you or family own a pucca house?
                   </label>
                   <select
                     value={formData.puccaHouse}
                     onChange={(e) => setFormData({ ...formData, puccaHouse: e.target.value })}
-                    className="w-full bg-white border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#123C35]"
+                    className="w-full bg-white border border-[#E5E9E6] rounded-lg px-3.5 py-2 text-sm text-[#17211F] focus:outline-none focus:border-[#123C35]"
                   >
                     <option value="No">No (Living in rent / kutcha dwelling)</option>
                     <option value="Yes">Yes (Own a concrete pucca house)</option>
@@ -274,13 +274,13 @@ export default function EligibilityWizardPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-xs font-semibold text-[#17211F] mb-1.5">
                     Area of Residence
                   </label>
                   <select
                     value={formData.residentialType}
                     onChange={(e) => setFormData({ ...formData, residentialType: e.target.value })}
-                    className="w-full bg-white border border-[#CFD9CE] rounded-lg px-3.5 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#123C35]"
+                    className="w-full bg-white border border-[#E5E9E6] rounded-lg px-3.5 py-2 text-sm text-[#17211F] focus:outline-none focus:border-[#123C35]"
                   >
                     <option value="Urban">Urban Municipality / Corporation</option>
                     <option value="Rural">Rural Gram Panchayat</option>
@@ -293,18 +293,18 @@ export default function EligibilityWizardPage() {
           {step === 4 && (
             <div className="space-y-5 animate-fade-up">
               <div>
-                <h2 className="text-base font-bold text-gray-900">Live Scheme Evaluation Results</h2>
-                <p className="text-xs text-gray-500 mt-0.5">
+                <h2 className="text-base font-bold text-[#17211F]">Live Scheme Evaluation Results</h2>
+                <p className="text-xs text-[#71807B] mt-0.5">
                   Evaluated across active central & state policies via AST Constraint Engine & Grounded LLM:
                 </p>
               </div>
 
               {evaluating ? (
-                <div className="bg-[#F8FAF8] border border-[#CFDFD5] rounded-2xl p-8 flex flex-col items-center justify-center text-center space-y-3">
+                <div className="bg-[#FAFAF7] border border-[#E5E9E6] rounded-2xl p-8 flex flex-col items-center justify-center text-center space-y-3">
                   <Loader2 className="w-7 h-7 text-[#2F6B5F] animate-spin" />
                   <div className="space-y-1">
-                    <p className="text-sm font-semibold text-gray-800">Reasoning Over 4,986 Policy Gazette Rules...</p>
-                    <p className="text-xs text-gray-500">Running AST constraint solver, coverage invariant check, and grounded verbalization.</p>
+                    <p className="text-sm font-semibold text-[#17211F]">Reasoning Over 4,986 Policy Gazette Rules...</p>
+                    <p className="text-xs text-[#71807B]">Running AST constraint solver, coverage invariant check, and grounded verbalization.</p>
                   </div>
                 </div>
               ) : evalError ? (
@@ -322,21 +322,21 @@ export default function EligibilityWizardPage() {
               ) : evalResponse ? (
                 <div className="space-y-4">
                   {/* Grounded LLM Verdict Card */}
-                  <div className="bg-[#F4FAF6] border border-[#CFE5D8] rounded-xl p-4 space-y-2.5 shadow-sm">
+                  <div className="bg-[#FAFAF7] border border-[#B2E2CE] rounded-xl p-4 space-y-2.5 shadow-sm">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-[#123C35]">
                         <Bot className="w-4 h-4 text-[#2F6B5F]" />
                         <span>Authoritative Model Finding</span>
                       </div>
-                      <span className="text-[10px] font-semibold text-[#123C35] bg-[#E2F2EB] px-2.5 py-0.5 rounded-full border border-[#BDE0D0]">
+                      <span className="text-[10px] font-semibold text-[#123C35] bg-[#D8F3EA] px-2.5 py-0.5 rounded-full border border-[#B2E2CE]">
                         ⚡ Qwen-2.5 1.5B + AST Solver
                       </span>
                     </div>
-                    <p className="text-xs text-gray-800 leading-relaxed font-medium">
+                    <p className="text-xs text-[#17211F] leading-relaxed font-medium">
                       {evalResponse.decision_summary}
                     </p>
                     {evalResponse.research_trace?.critical_coverage_pct !== undefined && (
-                      <div className="flex items-center gap-2 pt-1 text-[11px] text-gray-600">
+                      <div className="flex items-center gap-2 pt-1 text-[11px] text-[#71807B]">
                         <span className="font-semibold text-[#123C35]">Evidence Obligations:</span>
                         <span>{evalResponse.research_trace.covered_obligations} / {evalResponse.research_trace.total_obligations}</span>
                         <span className="text-gray-300">•</span>
@@ -353,21 +353,21 @@ export default function EligibilityWizardPage() {
                       const isCond = res.decision === "CONDITIONALLY_ELIGIBLE";
                       const isDisq = res.decision === "INELIGIBLE";
                       const badgeClass = isElig
-                        ? "text-emerald-800 bg-emerald-100 border-emerald-200"
+                        ? "text-[#16805A] bg-[#EBF7F2] border-[#16805A]/20"
                         : isCond
-                        ? "text-amber-800 bg-amber-100 border-amber-200"
+                        ? "text-[#C47F0C] bg-[#FEF3DC] border-[#C47F0C]/25"
                         : isDisq
-                        ? "text-rose-800 bg-rose-100 border-rose-200"
-                        : "text-gray-700 bg-gray-100 border-gray-200";
+                        ? "text-[#C94A4A] bg-[#FDF0F0] border-[#C94A4A]/20"
+                        : "text-[#17211F] bg-gray-100 border-gray-200";
 
                       return (
                         <div
                           key={idx}
-                          className="p-4 rounded-xl border border-[#E2E8E0] bg-white shadow-sm space-y-2.5 hover:border-[#CFDFD5] transition-all"
+                          className="p-4 rounded-xl border border-[#E5E9E6] bg-white shadow-sm space-y-2.5 hover:border-[#E5E9E6] transition-all"
                         >
                           <div className="flex items-start justify-between gap-3">
                             <div>
-                              <span className="font-bold text-sm text-gray-900">
+                              <span className="font-bold text-sm text-[#17211F]">
                                 {res.scheme_name}
                               </span>
                               <div className="mt-1 flex items-center gap-2">
@@ -420,7 +420,7 @@ export default function EligibilityWizardPage() {
               className={`px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors ${
                 step === 1
                   ? "opacity-50 cursor-not-allowed text-gray-400 bg-gray-50 border border-gray-200"
-                  : "text-gray-700 bg-white border border-gray-300 hover:bg-gray-50"
+                  : "text-[#17211F] bg-white border border-gray-300 hover:bg-gray-50"
               }`}
             >
               <ArrowLeft className="w-3.5 h-3.5" />
@@ -449,23 +449,23 @@ export default function EligibilityWizardPage() {
         </div>
 
         {/* Right Column: "Why we ask this?" Card (approx 35%) */}
-        <div className="lg:col-span-4 bg-[#F2F7F4] border border-[#CFDFD5] rounded-2xl p-6 shadow-sm space-y-6">
+        <div className="lg:col-span-4 bg-[#F2F7F4] border border-[#E5E9E6] rounded-2xl p-6 shadow-sm space-y-6">
           <div>
             <div className="w-10 h-10 rounded-xl bg-[#E0EFE8] text-[#123C35] flex items-center justify-center mb-3">
               <Sprout className="w-5 h-5 text-[#2F6B5F]" />
             </div>
 
-            <h3 className="font-bold text-sm text-gray-900">
+            <h3 className="font-bold text-sm text-[#17211F]">
               Why we ask this?
             </h3>
 
-            <p className="text-xs text-gray-600 leading-relaxed mt-2">
+            <p className="text-xs text-[#71807B] leading-relaxed mt-2">
               This information helps us match your profile with official eligibility criteria from government guidelines.
             </p>
           </div>
 
           {/* Inspirational Quote callout */}
-          <div className="pt-4 border-t border-[#CFDFD5]">
+          <div className="pt-4 border-t border-[#E5E9E6]">
             <blockquote className="font-serif italic text-sm text-[#855B24] leading-relaxed">
               “Empowering citizens through information.”
             </blockquote>

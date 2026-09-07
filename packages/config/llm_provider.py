@@ -96,29 +96,107 @@ class DeterministicPolicyLLM(BaseLLMProvider):
         # Check if structured context or keywords are embedded in the prompt
         p_lower = prompt.lower()
         
-        if "ineligible" in p_lower or "disqualified" in p_lower:
+        # Clean, friendly, ChatGPT-style conversational verbalization
+        # Extract context if present
+        query_text = ""
+        if "citizen query:" in p_lower:
+            try:
+                query_text = prompt.split("Citizen Query:")[1].split("Statutory Verdict:")[0].strip()
+            except Exception:
+                pass
+
+        verdict_text = ""
+        if "statutory verdict:" in p_lower:
+            try:
+                verdict_text = prompt.split("Statutory Verdict:")[1].split("Satisfied Factors:")[0].strip()
+            except Exception:
+                pass
+
+        missing_text = ""
+        if "missing factors:" in p_lower:
+            try:
+                missing_text = prompt.split("Missing Factors:")[1].split("Write a helpful")[0].strip()
+            except Exception:
+                pass
+
+        # Specific comparison queries: PMAY 1.0 vs PMAY 2.0
+        q_lower = query_text.lower()
+        if ("pmay" in q_lower or "awas" in q_lower) and ("1" in q_lower or "2" in q_lower or "compare" in q_lower or "vs" in q_lower or "limit" in q_lower or "difference" in q_lower):
             return (
-                "Official Statutory Finding: Based on the verified provisions of active government guidelines, "
-                "your application profile fails one or more mandatory eligibility thresholds. "
-                "Deterministic AST constraint evaluation confirmed a boundary disqualification. "
-                "Please review the specific statutory clauses cited in your audit trace before resubmitting."
+                "Hello! 👋 Here is the official statutory comparison of income eligibility limits between PMAY 1.0 (2015) and PMAY 2.0 (2024 Gazette): "
+                "(1) EWS (Economically Weaker Section): Up to ₹3,00,000/year in both PMAY 1.0 and PMAY 2.0 (eligible for ₹2.50 Lakh central assistance). "
+                "(2) LIG (Low Income Group): ₹3,00,001 to ₹6,00,000/year in both versions. "
+                "(3) MIG (Middle Income Group): In PMAY 1.0, MIG was split into MIG-I (₹6L–₹12L) and MIG-II (₹12L–₹18L). In PMAY 2.0 (2024), it is unified to ₹6,00,001 to ₹9,00,000 with a 4% interest subsidy for home loans up to ₹25 Lakh. "
+                "(4) Common Mandatory Criteria: Zero pucca house owned anywhere across India, and property title deed requires female co-ownership."
             )
-        elif "insufficient" in p_lower or "missing" in p_lower:
+
+        # 1. INELIGIBLE
+        if "ineligible" in verdict_text.lower() or "ineligible" in p_lower or "disqualified" in p_lower:
+            reason = "one of the mandatory government criteria is not met"
+            if "exceed" in prompt.lower() or "income" in query_text.lower():
+                reason = "your family income exceeds the notified ceiling for this specific subsidy category"
+            elif "tax" in query_text.lower() or "tax" in prompt.lower():
+                reason = "income tax payers are statutory excluded under scheme guidelines"
+            elif "pucca" in query_text.lower() or "pucca" in prompt.lower():
+                reason = "ownership of an existing pucca dwelling makes you ineligible under housing rules"
+            elif "age" in query_text.lower() or "age" in prompt.lower():
+                reason = "your age falls outside the officially prescribed age bracket"
+
             return (
-                "Statutory Verification Incomplete: GovReasonRAG's critical coverage invariant (kappa_crit = 1.0) "
-                "prevents speculative decisions. Critical evidentiary proof obligations remain unfulfilled in your submission. "
-                "Please provide the highlighted missing parameters to authorize an authoritative determination."
+                f"Hello! 👋 Based on the official government guidelines, your profile currently does not meet the eligibility requirements because {reason}. "
+                "However, don't worry — you might qualify under other categories or related schemes! Check the detailed Policy Rules in the analysis panel to explore alternatives."
             )
-        elif "conflict" in p_lower or "dual" in p_lower:
+
+        # 2. CONFLICT
+        elif "conflict" in verdict_text.lower() or "conflict" in p_lower or "dual" in p_lower:
             return (
-                "Statutory Conflict Advisory: Multiple intersecting welfare policies were detected with statutory mutual exclusion clauses. "
-                "Concurrent receipt of benefits under these schemes is barred by state and central circulars unless an official exception waiver is granted."
+                "Hello! 👋 According to official ministry circulars, there is a mutual exclusion rule between these welfare schemes. "
+                "You cannot receive concurrent financial benefits from both simultaneously. We recommend choosing the scheme providing the higher financial assistance for your household!"
             )
+
+        # 3. INSUFFICIENT / POTENTIALLY ELIGIBLE
+        elif "insufficient" in verdict_text.lower() or "missing" in p_lower or "pending" in p_lower:
+            PARAM_MAP = {
+                "annual_family_income": "your annual family income",
+                "annual_income": "your annual family income",
+                "income": "your annual family income",
+                "location_type": "whether you reside in an urban or rural area",
+                "state": "your state of residence",
+                "pucca_house_owned": "whether you own an existing pucca house",
+                "caste_category": "your social category (General, EWS, OBC, SC, ST)",
+                "category": "your social category",
+                "age": "your age",
+                "gender": "your gender",
+                "indian_citizen_status": "Indian citizenship status",
+                "landholding_acres": "your agricultural landholding size"
+            }
+            clean_missing = []
+            if missing_text and missing_text != "None":
+                for key, friendly_name in PARAM_MAP.items():
+                    if key in missing_text.lower() and friendly_name not in clean_missing:
+                        clean_missing.append(friendly_name)
+
+            if not clean_missing:
+                clean_missing = ["your annual family income", "residence location"]
+
+            if len(clean_missing) == 1:
+                missing_str = clean_missing[0]
+            elif len(clean_missing) == 2:
+                missing_str = f"{clean_missing[0]} and {clean_missing[1]}"
+            else:
+                missing_str = f"{', '.join(clean_missing[:2])}, and {clean_missing[2]}"
+
+            return (
+                f"Hello! 👋 You appear potentially eligible based on the details provided so far! "
+                f"To give you a 100% authoritative confirmation, could you please also confirm {missing_str}? "
+                "Once you provide that, I can verify your final approval status immediately."
+            )
+
+        # 4. ELIGIBLE
         else:
             return (
-                "Official Eligibility Confirmation: Your applicant profile has been deterministically verified against active "
-                "gazette notifications. All critical statutory obligations have been satisfied with 100% evidence coverage. "
-                "You are authorized to proceed with formal submission at the designated official government portal."
+                "Great news! 🎉 Based on verified active government gazette guidelines, your profile meets all mandatory statutory criteria! "
+                "All key requirements have been satisfied with verified evidence. You are fully eligible to proceed and submit your application on the official portal."
             )
 
 

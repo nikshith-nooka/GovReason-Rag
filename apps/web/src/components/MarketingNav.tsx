@@ -8,7 +8,7 @@ export function MarketingNav() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <header className="w-full bg-white/95 backdrop-blur border-b border-[#E2E8E0] sticky top-0 z-50">
+    <header className="w-full bg-white/95 backdrop-blur border-b border-[#E5E9E6] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
@@ -42,7 +42,7 @@ export function MarketingNav() {
         {/* Right Action Buttons */}
         <div className="flex items-center gap-4">
           {/* Language Switcher */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#D5DDD3] bg-white text-xs text-gray-700">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E9E6] bg-white text-xs text-gray-700">
             <Globe className="w-3.5 h-3.5 text-gray-400" />
             <select
               value={language}
