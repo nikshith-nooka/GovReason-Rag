@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -123,56 +124,30 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Right Column: Hero Visual Card (Interactive Signature Sample) */}
-        <div className="lg:col-span-5">
-          <div className="bg-white border-2 border-[#123C35] rounded-3xl p-6 sm:p-7 shadow-lg space-y-4 relative overflow-hidden">
-            <div className="flex items-center justify-between border-b border-[#E5E9E6] pb-4">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-xl bg-[#D8F3EA] text-[#123C35] flex items-center justify-center font-bold text-sm">
-                  ✓
-                </div>
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#123C35]">
-                    Live Evidence Contract
-                  </div>
-                  <div className="text-[11px] font-mono text-[#71807B]">
-                    CTR-2026-PMAY-U-01 · Gazette Grounded
-                  </div>
-                </div>
-              </div>
-              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#16805A] bg-[#EBF7F2] px-2.5 py-1 rounded-full border border-[#16805A]/20">
-                🟢 Verified
+        {/* Right Column: Illustration & Artistic Accent */}
+        <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
+          <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-md border-2 border-[#123C35]/15 bg-white p-4 flex flex-col items-center justify-center group hover:shadow-xl transition-all">
+            {/* Top Gazette Grounded Badge */}
+            <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#D8F3EA] shadow-sm flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#16805A] animate-pulse" />
+              <span className="text-[11px] font-bold text-[#123C35] tracking-wide">Gazette Grounded · Active</span>
+            </div>
+
+            {/* Indian Parliament Illustration */}
+            <Image
+              src="/parliament.jpg"
+              alt="Indian Parliament Illustration"
+              width={420}
+              height={420}
+              className="object-contain rounded-2xl group-hover:scale-[1.02] transition-transform duration-300"
+              priority
+            />
+
+            {/* Overlay Cursive Tag */}
+            <div className="absolute bottom-5 right-6 text-right bg-white/90 backdrop-blur-sm px-3.5 py-1.5 rounded-xl border border-[#E5E9E6]/80 shadow-sm">
+              <span className="font-serif italic text-xs sm:text-sm text-[#8A5A20] tracking-wide block font-medium">
+                Policies • People • Possibilities
               </span>
-            </div>
-
-            <div className="space-y-2.5 text-xs">
-              <div className="p-3 rounded-xl bg-[#FAFAF7] border border-[#E5E9E6] flex items-center justify-between">
-                <span className="text-[#17211F] font-semibold">Annual Household Income</span>
-                <span className="text-[#16805A] font-mono font-bold">✓ &lt;= ₹3,00,000</span>
-              </div>
-              <div className="p-3 rounded-xl bg-[#FAFAF7] border border-[#E5E9E6] flex items-center justify-between">
-                <span className="text-[#17211F] font-semibold">Residential Pucca House</span>
-                <span className="text-[#16805A] font-mono font-bold">✓ Zero Owned</span>
-              </div>
-              <div className="p-3 rounded-xl bg-[#FAFAF7] border border-[#E5E9E6] flex items-center justify-between">
-                <span className="text-[#17211F] font-semibold">Indian Domicile</span>
-                <span className="text-[#16805A] font-mono font-bold">✓ Verified</span>
-              </div>
-              <div className="p-3 rounded-xl bg-[#FEF3DC] border border-[#C47F0C]/20 flex items-center justify-between">
-                <span className="text-[#17211F] font-semibold">Female Co-Ownership Title</span>
-                <span className="text-[#C47F0C] font-mono font-bold">⚠ Pending Deed</span>
-              </div>
-            </div>
-
-            <div className="pt-2 flex items-center justify-between text-xs text-[#71807B]">
-              <span>Grounding: MoHUA Para 3.2</span>
-              <Link
-                href="/assistant"
-                className="font-bold text-[#2F6B5F] hover:text-[#123C35] flex items-center gap-1"
-              >
-                <span>Try Live Query</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
             </div>
           </div>
         </div>

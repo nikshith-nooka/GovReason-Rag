@@ -75,7 +75,7 @@ export async function chatWithAssistant(
   query: string,
   profile: CitizenProfile = {}
 ): Promise<ExplainableResponse> {
-  const res = await fetch("http://localhost:8000/api/chat", {
+  const res = await fetch("/api/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -97,7 +97,7 @@ export async function checkStructuredEligibility(
   profile: CitizenProfile
 ): Promise<ExplainableResponse> {
   const query = `Evaluate overall scheme eligibility for citizen in ${profile.state || 'India'}, age ${profile.age || 'unspecified'}, income ₹${profile.annual_family_income || 'unspecified'}, occupation ${profile.occupation || 'unspecified'}.`;
-  const res = await fetch("http://localhost:8000/api/eligibility/check", {
+  const res = await fetch("/api/eligibility/check", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
